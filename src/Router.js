@@ -1,0 +1,100 @@
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
+
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Landing from "./components/layout/Landing";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+
+import Dashboard from "./components/Dashboard";
+import UserInsert from "./components/User/UserInsert";
+import UserUpdate from "./components/User/UserUpdate";
+import InsertUser from './components/User/Insertuser';
+
+
+//admin
+import AdminTitleBar from "./components/admin/AdminTitleBar";
+import CreateSubmission from "./components/admin/CreateSubmission";
+import ExcelUpload from "./components/admin/ExcelUpload";
+import StdGroups from "./components/admin/StdGroups";
+import TempUpload from "./components/admin/TempUpload";
+
+// student
+import StudentTitleBar from "./components/student/StudentTitleBar";
+import AddSubmission from "./components/student/AddSubmission"
+import CreateGroup from "./components/student/CreateGroup"
+import DownloadTemp from "./components/student/DownloadTemp"
+import FindGroup from "./components/student/FindGroup"
+import ReqSup from "./components/student/ReqSup"
+import StdHome from "./components/student/StdHome"
+
+// supervisor
+import AcceptTopics from "./components/supervisor/AcceptTopics";
+import MarkingSchemes from "./components/supervisor/MarkingSchemes";
+import SubmittedDocs from "./components/supervisor/SubmittedDocs";
+import SupervisorHome from "./components/supervisor/SupervisorHome";
+
+// co-supervisor
+
+
+// panel-member
+import PmTitleBar from "./components/panelMember/PmTitleBar";
+import EvaluatePres from "./components/panelMember/EvaluatePres";
+import EvaluateTopics from "./components/panelMember/EvaluateTopics";
+import PmHome from "./components/panelMember/PmHome";
+
+
+let isauth = localStorage.getItem('user');
+
+export default function Router() {
+	return (
+			<div >
+				<Router>
+					<Navbar/>	
+					<Routes>
+						<Route exact path="/" element={isauth ? <Dashboard/> : <Landing/>} />
+						<Route exact path="/imageinsertcheck" element={<InsertUser/>} />
+						<Route exact path="/dashboard" element={<Dashboard/>} />
+						<Route exact path="/register" element={<Register/>} />
+						<Route exact path="/login" element={<Login/>} />
+
+						{/* <Route exact path="" element={NotFound} /> */}
+						<Route exact path="/insertUser" element={<UserInsert/>} />					
+						<Route exact path="/updatecustomers/:id" element={<UserUpdate/>}/> 
+						
+						{/* admin */}
+						<Route exact path="/adminTitleBar" element={<AdminTitleBar/>} />
+						<Route exact path="/createsub" element={<CreateSubmission/>} />
+						<Route exact path="/exupload" element={<ExcelUpload/>} />
+						<Route exact path="/stdgrps" element={<StdGroups/>} />
+						<Route exact path="/tmpupload" element={<TempUpload/>} />
+
+						{/* student */}
+						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />
+						<Route exact path="/addsub" element={<AddSubmission/>} />
+						<Route exact path="/creategrp" element={<CreateGroup/>} />
+						<Route exact path="/downtmp" element={<DownloadTemp/>} />
+						<Route exact path="/findgrp" element={<FindGroup/>} />
+						<Route exact path="/reqsup" element={<ReqSup/>} />
+						<Route exact path="/stdhome" element={<StdHome/>} />
+						
+						{/* panelMember */}
+						<Route exact path="/pmTitleBar" element={<PmTitleBar/>} />
+						<Route exact path="/evapresentation" element={<EvaluatePres/>} />
+						<Route exact path="/evatopics" element={<EvaluateTopics/>} />
+						<Route exact path="/pmhome" element={<PmHome/>} />
+
+						{/* supervisor */}
+						<Route exact path="/actopics" element={<AcceptTopics/>} />
+						<Route exact path="/markingsche" element={<MarkingSchemes/>} />
+						<Route exact path="/submitteddocs" element={<SubmittedDocs/>} />
+						<Route exact path="/supervhome" element={<SupervisorHome/>} />
+
+					</Routes>
+					<Footer/>
+				</Router>
+			</div>
+	);
+}
+
