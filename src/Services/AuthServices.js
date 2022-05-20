@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 
+
 let RegisterURL = "http://localhost:5000/user/signup";
 let LoginURL = "http://localhost:5000/user/signin";
 let AuthURL = "http://localhost:8080/user/auth";
@@ -8,6 +9,8 @@ let getAllUsers = "http://localhost:5000/user/getAllUsers";
 let CreateUser = "http://localhost:5000/user/createUser";
 let UpdateUser = "http://localhost:5000/user/updateUserById/";
 let DeleteUser = "http://localhost:5000/user/deleteUser/";
+
+let getByITNum = "http://localhost:5000/user/getUserByITNum/";
 
 export async function RegisterStudent(data) {
     const alldata = {
@@ -72,4 +75,14 @@ export async function UpdateAdmin(id,data) {
 
 export async function DeleteAdmin(id) {
   return await axios.delete(DeleteUser + id);
+}
+
+
+
+export async function GetByIT(data) {
+  
+  let  ITnum =data.ITnum
+  
+  console.log(ITnum);
+  return await axios.get(getByITNum + ITnum);
 }
