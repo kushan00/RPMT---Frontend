@@ -41,7 +41,7 @@ const Navbar = () => {
 				<a style={{ display: userRole == "student" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Downloads</a>
 
                 {/*  admin Pages */}
-                <a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Handle Users</a>
+                <a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Handle Staff</a>
 				<a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="/stdgrps" aria-current="page">All Groups</a>
                 <a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Ceate Submissions</a>
                 <a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Allocate panel Members</a>
