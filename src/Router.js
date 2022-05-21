@@ -8,17 +8,16 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
 import Dashboard from "./components/Dashboard";
-import UserInsert from "./components/User/UserInsert";
-import UserUpdate from "./components/User/UserUpdate";
-import InsertUser from './components/User/Insertuser';
+
 
 
 //admin
-import AdminTitleBar from "./components/admin/AdminTitleBar";
+import HandleStaff from "./components/admin/HandleStaff";
 import CreateSubmission from "./components/admin/CreateSubmission";
 import ExcelUpload from "./components/admin/ExcelUpload";
 import StdGroups from "./components/admin/StdGroups";
 import TempUpload from "./components/admin/TempUpload";
+import ViewAllRoles from "./components/admin/ViewAllRoles";
 
 // student
 import StudentTitleBar from "./components/student/StudentTitleBar";
@@ -44,6 +43,9 @@ import EvaluatePres from "./components/panelMember/EvaluatePres";
 import EvaluateTopics from "./components/panelMember/EvaluateTopics";
 import PmHome from "./components/panelMember/PmHome";
 
+//staff
+import RegisterStaff from "./components/auth/RegisterStaff";
+
 
 let isauth = localStorage.getItem('user');
 
@@ -54,21 +56,20 @@ export default function Router() {
 					<Navbar/>	
 					<Routes>
 						<Route exact path="/" element={isauth ? <Dashboard/> : <Landing/>} />
-						<Route exact path="/imageinsertcheck" element={<InsertUser/>} />
 						<Route exact path="/dashboard" element={<Dashboard/>} />
 						<Route exact path="/register" element={<Register/>} />
 						<Route exact path="/login" element={<Login/>} />
-
-						{/* <Route exact path="" element={NotFound} /> */}
-						<Route exact path="/insertUser" element={<UserInsert/>} />					
-						<Route exact path="/updatecustomers/:id" element={<UserUpdate/>}/> 
 						
+						{/* staff */}
+						<Route exact path="/staffRegister" element={<RegisterStaff/>} />
+
 						{/* admin */}
-						<Route exact path="/adminTitleBar" element={<AdminTitleBar/>} />
+						<Route exact path="/HandleStaff" element={<HandleStaff/>} />
 						<Route exact path="/createsub" element={<CreateSubmission/>} />
 						<Route exact path="/exupload" element={<ExcelUpload/>} />
 						<Route exact path="/stdgrps" element={<StdGroups/>} />
 						<Route exact path="/tmpupload" element={<TempUpload/>} />
+						<Route exact path="/ViewAllRoles" element={<ViewAllRoles/>}/>
 
 						{/* student */}
 						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />

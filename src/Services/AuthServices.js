@@ -53,6 +53,7 @@ export async function CreateAdmin(data) {
       name:data.name,
       mobileno:data.mobileno,
       email:data.email,
+      ITnumber:data.ITnumer,
       password:data.password,
       userRole:data.userRole
   };
@@ -67,6 +68,7 @@ export async function UpdateAdmin(id,data) {
       mobileno:data.mobileno,
       email:data.email,
       password:data.password,
+      ITnumber:data.ITnumber,
       userRole:data.userRole
   };
 

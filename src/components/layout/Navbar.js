@@ -1,6 +1,10 @@
 import React, { Fragment } from "react";
 import { useNavigate , Link} from "react-router-dom";
-
+import { BsPersonLinesFill } from "react-icons/bs"
+import { BsFillPersonPlusFill } from "react-icons/bs"
+import { MdOutlineChecklistRtl } from "react-icons/md"
+import { MdPictureAsPdf } from "react-icons/md"
+import { FaFileUpload } from "react-icons/fa"
 
 const Navbar = () => {
 
@@ -15,9 +19,6 @@ const Navbar = () => {
 		navigate("/");
 	  }
 
-	const handleSignUp = () => {
-		navigate("/register");
-	}
 	
 
 	return (
@@ -32,38 +33,39 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
 
+			    <a style={{ display: userRole == "staff" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" aria-current="page" href="/staffRegister">Register as Staff</a>
+
                 {/* Student pages */}
-                <a style={{ display: userRole == "student" ? "flex" : "none" }} className="nav-link active" aria-current="page" href="/creategrp">Create Group</a>
-                <a style={{ display: userRole == "student" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Register Reserch Topic</a>
-                <a style={{ display: userRole == "student" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Request Superviser</a>
-                <a style={{ display: userRole == "student" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Request co-superviser</a>
-				<a style={{ display: userRole == "student" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Submissions</a>
-				<a style={{ display: userRole == "student" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Downloads</a>
+                <a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" aria-current="page" href="/creategrp">Create Group</a>
+                <a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Register Reserch Topic</a>
+                <a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Request Superviser</a>
+                <a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Request co-superviser</a>
+				<a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Submissions</a>
+				<a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Downloads</a>
 
                 {/*  admin Pages */}
-                <a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Handle Staff</a>
-				<a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="/stdgrps" aria-current="page">All Groups</a>
-                <a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Ceate Submissions</a>
-                <a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Allocate panel Members</a>
-				<a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Create Marking Schemes</a>
-				<a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Upload Templates</a>
-				<a style={{ display: userRole == "admin" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">View Roles</a>
+				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/stdgrps" aria-current="page">All Groups</a>
+                <a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Ceate Submissions</a>
+                <a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/HandleStaff" aria-current="page">Allocate panel Members</a>
+				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Create Marking Schemes</a>
+				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Upload Templates</a>
+				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/ViewAllRoles" aria-current="page">View Roles</a>
 
                 {/* superviser Pages */}
-                <a style={{ display: userRole == "superviser" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Accept Topics</a>
-                <a style={{ display: userRole == "superviser" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Group Chats</a>
-				<a style={{ display: userRole == "superviser" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Evaluate Submissions</a>
+                <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser"  ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Accept Topics</a>
+                <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Group Chats</a>
+				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Submissions</a>
 
 				{/*co_superviser pages */}
-				<a style={{ display: userRole == "co_superviser" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Evaluate Topics</a>
-				<a style={{ display: userRole == "co_superviser" ? "flex" : "none" }} className="nav-link active" href="" aria-current="page">Evaluate student's Presentations</a>
+				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Topics</a>
+				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate student's Presentations</a>
 
 
               </div>
             </div>
           </div>
 		  <Link to="/userprofile">
-			<button  className="btn btn-success" type="submit" style={{ float: "right", display: userRole ? "flex" : "none" }}>
+			<button  className="btn btn-success" type="submit" style={{ float: "right", display: userRole ? "flex" : "none" , textDecoration:"none"}}>
 				Profile
 			</button>
 		  </Link>	
