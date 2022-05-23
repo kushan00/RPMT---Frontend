@@ -27,6 +27,7 @@ import DownloadTemp from "./components/student/DownloadTemp"
 import FindGroup from "./components/student/FindGroup"
 import ReqSup from "./components/student/ReqSup"
 import StdHome from "./components/student/StdHome"
+import ReqCoSup from "./components/student/ReqCoSup";
 
 // supervisor
 import AcceptTopics from "./components/supervisor/AcceptTopics";
@@ -78,6 +79,7 @@ export default function Router() {
 						<Route exact path="/downtmp" element={<DownloadTemp/>} />
 						<Route exact path="/findgrp" element={<FindGroup/>} />
 						<Route exact path="/reqsup" element={<ReqSup/>} />
+						<Route exact path="/reqcosup" element={<ReqCoSup/>} />
 						<Route exact path="/stdhome" element={<StdHome/>} />
 						
 						{/* panelMember */}
