@@ -29,11 +29,6 @@ const Login = () => {
 		localStorage.setItem("token",data?.data?.token);
 		localStorage.setItem("userRole",data?.data?.userRole);
 		localStorage.setItem("user",data?.data?.user);
-		Swal.fire({
-			icon: 'success',
-			title: 'Congrats!',
-			text: 'Login successfull...!',
-		  })
 		navigate("/dashboard");
 		}
 		else

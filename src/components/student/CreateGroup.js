@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import { GetByIT } from "../../Services/AuthServices";
 import { createNewGroup } from "../../Services/GroupServices";
+import Swal from 'sweetalert2';
 
 const CreateGroup = () => {
 
@@ -69,9 +70,9 @@ const CreateGroup = () => {
       {
         alert(`${number[i]} IT Number Is not Valid`);
       }
-    }
+  }
 
-    const regdata = {
+  const regdata = {
           GroupNo:GroupNo,
           Group_Leader_ITNUM:numbers[0],
           Group_Member1_ITNUM:numbers[1],
@@ -83,13 +84,20 @@ const CreateGroup = () => {
     console.log("Reg Group ",data);
     if(data?.data?._id)
     {
-      alert("Group Registration Success...!");
+			Swal.fire({
+				icon: 'success',
+				title: 'Congrats!',
+				text: 'Group Registration successfull...!',
+			  })
       navigate("/dashboard");
-
     }
     else
     {
-       alert("Registration Failed..!");
+      Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Registration Failed...!',
+			  })
     }
   }
 
