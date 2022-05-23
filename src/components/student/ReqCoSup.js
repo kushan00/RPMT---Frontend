@@ -43,6 +43,7 @@ const ReqCoSup = () => {
 	const [staffData,setstaffData] = useState({});
 
 	const requestCoSupervisor = async (e) => {
+
 		const data ={
 			supervisor_id: staffData.StaffID,
 			leader_itnum: Group_Leader_ITNUM,
@@ -57,7 +58,8 @@ const ReqCoSup = () => {
 				title: 'Congrats!',
 				text: 'Request successfull...!',
 			  })
-			window.location.reload();
+			getAllStaff();
+			setopenModal(false);
 		}
 		else{
 			Swal.fire({
@@ -105,7 +107,8 @@ const ReqCoSup = () => {
 	},[])
 
 	const assignStaff = (data) => {
-		console.log("selected staff data",data);
+		setGroup_Leader_ITNUM("");
+		setGroupNo("");
 		setstaffData(data);
 		setopenModal(true);
 	}

@@ -60,7 +60,8 @@ const ReqSup = () => {
 				title: 'Congrats!',
 				text: 'Request successfull...!',
 			  })
-			window.location.reload();
+			  getAllStaff();
+			  setopenModal(false);
 		}
 		else{
 			Swal.fire({
@@ -109,7 +110,8 @@ const ReqSup = () => {
 	},[])
 
 	const assignStaff = (data) => {
-		console.log("selected staff data",data);
+		setGroup_Leader_ITNUM("");
+		setGroupNo("");
 		setstaffData(data);
 		setopenModal(true);
 	}
