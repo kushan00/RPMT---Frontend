@@ -17,6 +17,7 @@ import {
 	ModalBody,
    } from "reactstrap";
 import { AssignSupervisor } from "../../Services/AssignSupervisor-Co";
+import Swal from 'sweetalert2';
 
 const ReqSup = () => {
   const navigate = useNavigate();
@@ -52,11 +53,19 @@ const ReqSup = () => {
 		console.log("Superviser reg ", response);
 		if(response?.status == 201)
 		{
-			alert("Request Successfull..!");
+			Swal.fire({
+				icon: 'success',
+				title: 'Congrats!',
+				text: 'Request successfull...!',
+			  })
 			window.location.reload();
 		}
 		else{
-			alert("Request failed..!");
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Request Failed!',
+			  })
 		}
 	  }
 
