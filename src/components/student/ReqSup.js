@@ -19,6 +19,7 @@ import {
 import { AssignSupervisor } from "../../Services/AssignSupervisor-Co";
 import Swal from 'sweetalert2';
 
+
 const ReqSup = () => {
   const navigate = useNavigate();
 
@@ -53,6 +54,7 @@ const ReqSup = () => {
 		console.log("Superviser reg ", response);
 		if(response?.status == 201)
 		{
+
 			Swal.fire({
 				icon: 'success',
 				title: 'Congrats!',
@@ -67,6 +69,7 @@ const ReqSup = () => {
 				text: 'Request Failed!',
 			  })
 		}
+
 	  }
 
 	const getAllStaff = async () => {
