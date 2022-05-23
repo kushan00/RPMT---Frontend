@@ -31,8 +31,14 @@ export async function LoginCustomer(data) {
         email:data.email,
         password:data.password,
     };
-  
-    return await axios.post(LoginURL,alldata);
+    
+     await axios.post(LoginURL,alldata)
+     .then((good)=>{
+       return good;
+     })
+     .catch((error)=>{
+       return error;
+     })
 }
 
 export async function AuthCustomer(token) { 

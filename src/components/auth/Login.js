@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useNavigate ,Link } from "react-router-dom";
 import { LoginCustomer } from "../../Services/AuthServices";
-
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -29,11 +29,20 @@ const Login = () => {
 		localStorage.setItem("token",data?.data?.token);
 		localStorage.setItem("userRole",data?.data?.userRole);
 		localStorage.setItem("user",data?.data?.user);
+		Swal.fire({
+			icon: 'success',
+			title: 'Congrats!',
+			text: 'Login successfull...!',
+		  })
 		navigate("/dashboard");
 		}
 		else
 		{
-			alert("Login Failed");
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Login Failed!',
+			  })
 		}
 	};
 
