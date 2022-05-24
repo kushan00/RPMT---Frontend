@@ -55,6 +55,7 @@ const Navbar = () => {
                 <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser"  ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Accept Topics</a>
                 <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Group Chats</a>
 				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Submissions</a>
+				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/acceptReq" aria-current="page">Accept Requests</a>
 
 				{/*co_superviser pages */}
 				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Topics</a>

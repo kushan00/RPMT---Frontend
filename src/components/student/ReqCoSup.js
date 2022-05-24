@@ -45,7 +45,7 @@ const ReqCoSup = () => {
 	const requestCoSupervisor = async (e) => {
 
 		const data ={
-			supervisor_id: staffData.StaffID,
+			co_supervisor_id: staffData.StaffID,
 			leader_itnum: Group_Leader_ITNUM,
 			group_regnum: Group_Reg_NUM,
 		}
