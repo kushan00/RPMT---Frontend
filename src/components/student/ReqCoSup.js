@@ -16,11 +16,11 @@ import {
 	ModalHeader,
 	ModalBody,
    } from "reactstrap";
-import { AssignSupervisor } from "../../Services/AssignSupervisor-Co";
+import { AssignCoSupervisor } from "../../Services/AssignSupervisor-Co";
 import Swal from 'sweetalert2';
 
 
-const ReqSup = () => {
+const ReqCoSup = () => {
   const navigate = useNavigate();
 
   const[Group_Leader_ITNUM,setGroup_Leader_ITNUM]=useState("");
@@ -36,32 +36,30 @@ const ReqSup = () => {
     setGroupNo(e.target.value)
   }
 
- 
 
 	const [staffDetails , setstaffDetails] = useState({});
 	const [loading,setLoading] = useState(false);
 	const [openModal , setopenModal] = useState(false);
 	const [staffData,setstaffData] = useState({});
 
+	const requestCoSupervisor = async (e) => {
 
-	const requestSupervisor = async (e) => {
 		const data ={
 			supervisor_id: staffData.StaffID,
 			leader_itnum: Group_Leader_ITNUM,
 			group_regnum: Group_Reg_NUM,
 		}
-		let response = await AssignSupervisor(data);
+		let response = await AssignCoSupervisor(data);
 		console.log("Superviser reg ", response);
 		if(response?.status == 201)
 		{
-
 			Swal.fire({
 				icon: 'success',
 				title: 'Congrats!',
 				text: 'Request successfull...!',
 			  })
-			  getAllStaff();
-			  setopenModal(false);
+			getAllStaff();
+			setopenModal(false);
 		}
 		else{
 			Swal.fire({
@@ -70,9 +68,8 @@ const ReqSup = () => {
 				text: 'Request Failed!',
 			  })
 		}
-
-	  }
-
+	}
+  
 	const getAllStaff = async () => {
 		try{
 			setLoading(true);
@@ -80,7 +77,7 @@ const ReqSup = () => {
 			console.log("all staff",data);
 			let array = [];
 			data?.data?.map((item) => {
-				if(item?.userRole == "superviser")
+				if(item?.userRole == "co_superviser")
 				{
 					array.push(item);
 				}
@@ -159,7 +156,7 @@ const ReqSup = () => {
     <div style={{margin:"10px"}}>
 <Card>
 <CardHeader>
-    <CardTitle style={{color:"purple" , fontSize:"30px"}}>Request Supervisor</CardTitle>
+    <CardTitle style={{color:"purple" , fontSize:"30px"}}>Request Co-Supervisor</CardTitle>
 </CardHeader>
 <CardBody>
 <DataTable 
@@ -214,7 +211,7 @@ backdrop={true}>
                     <Label>Group Registration Number </Label>
                     <Input type="text" className="input" placeholder="Group Registration Number" value={Group_Reg_NUM} onChange={(e)=>handleGroup_Reg_Num(e)}/>
                     <br/>
-                    <Button className="btn btn-success" onClick={(e)=>requestSupervisor(e)}>Request</Button>
+                    <Button className="btn btn-success" onClick={(e)=>requestCoSupervisor(e)}>Request</Button>
                   </Form>
 </div>
 </ModalBody>
@@ -224,5 +221,5 @@ backdrop={true}>
 );
 };
 
-export default ReqSup
+export default ReqCoSup
 

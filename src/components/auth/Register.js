@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RegisterStudent } from "../../Services/AuthServices";
-
+import Swal from 'sweetalert2';
 
 const Register = () => {
 
@@ -34,11 +34,20 @@ const Register = () => {
 			localStorage.setItem("token",data?.data?.token);
 			localStorage.setItem("userRole",data?.data?.userRole);
 			localStorage.setItem("user",data?.data?.user);
+			Swal.fire({
+				icon: 'success',
+				title: 'Congrats!',
+				text: 'Register successfull...!',
+			  })
 			navigate("/dashboard");
 			}
 			else
 			{
-				alert("Registration Failed..!");
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Registration Failed..!',
+				  })
 			}
 		}
 	};
