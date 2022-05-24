@@ -34,6 +34,7 @@ import AcceptTopics from "./components/supervisor/AcceptTopics";
 import MarkingSchemes from "./components/supervisor/MarkingSchemes";
 import SubmittedDocs from "./components/supervisor/SubmittedDocs";
 import SupervisorHome from "./components/supervisor/SupervisorHome";
+import AcceptRequests from "./components/supervisor/AcceptRequests"
 
 // co-supervisor
 
@@ -93,6 +94,7 @@ export default function Router() {
 						<Route exact path="/markingsche" element={<MarkingSchemes/>} />
 						<Route exact path="/submitteddocs" element={<SubmittedDocs/>} />
 						<Route exact path="/supervhome" element={<SupervisorHome/>} />
+						<Route exact path="/acceptReq" element={<AcceptRequests/>} />
 
 					</Routes>
 					<Footer/>
