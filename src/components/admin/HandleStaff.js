@@ -15,7 +15,7 @@ import {
 	ModalBody,
    } from "reactstrap";
 import moment from 'moment';
-
+import Swal from 'sweetalert2';
 
 const HandleStaff = () => {
 
@@ -82,12 +82,20 @@ const HandleStaff = () => {
 	  console.log("return",data);
 	  if(data?.status == 200)
 	  {
-		  alert("User Role Update Successfull..!");
+		  Swal.fire({
+			icon: 'success',
+			title: 'Congrats!',
+			text: 'User Role Update Successfull..!',
+		  })
 		  window.location.reload();
 	  }
 	  else
 	  {
-		  alert("Update Failed..!");
+		Swal.fire({
+			icon: 'error',
+			title: 'Oops...',
+			text: 'Update Failed..!',
+		  })
 	  }
 	}
 	

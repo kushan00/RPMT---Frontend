@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useNavigate ,Link } from "react-router-dom";
 import { LoginCustomer } from "../../Services/AuthServices";
-
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -33,7 +33,11 @@ const Login = () => {
 		}
 		else
 		{
-			alert("Login Failed");
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Login Failed!',
+			  })
 		}
 	};
 

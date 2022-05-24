@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CreateAdmin } from "../../Services/AuthServices";
-
+import Swal from 'sweetalert2';
 
 const RegisterStaff = () => {
 
@@ -32,12 +32,20 @@ const RegisterStaff = () => {
 			console.log("data",data)
 			if(data?.data?._id)
 			{
-				alert("Register successfull...!");
+				Swal.fire({
+					icon: 'success',
+					title: 'Congrats!',
+					text: 'Register successfull...!',
+				  })
 				navigate("/login");
 			}
 			else
 			{
-				alert("Insert  Failed..!");
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Registration Failed..!',
+				  })
 			}
 		}
 	};

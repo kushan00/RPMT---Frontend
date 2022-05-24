@@ -31,7 +31,7 @@ export async function LoginCustomer(data) {
         email:data.email,
         password:data.password,
     };
-  
+    
     return await axios.post(LoginURL,alldata);
 }
 
