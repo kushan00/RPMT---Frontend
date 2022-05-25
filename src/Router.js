@@ -27,12 +27,16 @@ import DownloadTemp from "./components/student/DownloadTemp"
 import FindGroup from "./components/student/FindGroup"
 import ReqSup from "./components/student/ReqSup"
 import StdHome from "./components/student/StdHome"
+import RegisterTopic from "./components/student/RegisterTopic"
+import ReqCoSup from "./components/student/ReqCoSup";
+
 
 // supervisor
 import AcceptTopics from "./components/supervisor/AcceptTopics";
 import MarkingSchemes from "./components/supervisor/MarkingSchemes";
 import SubmittedDocs from "./components/supervisor/SubmittedDocs";
 import SupervisorHome from "./components/supervisor/SupervisorHome";
+import AcceptRequests from "./components/supervisor/AcceptRequests"
 
 // co-supervisor
 
@@ -46,7 +50,7 @@ import PmHome from "./components/panelMember/PmHome";
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
 
-
+//testing 
 let isauth = localStorage.getItem('user');
 
 export default function Router() {
@@ -78,7 +82,9 @@ export default function Router() {
 						<Route exact path="/downtmp" element={<DownloadTemp/>} />
 						<Route exact path="/findgrp" element={<FindGroup/>} />
 						<Route exact path="/reqsup" element={<ReqSup/>} />
+						<Route exact path="/reqcosup" element={<ReqCoSup/>} />
 						<Route exact path="/stdhome" element={<StdHome/>} />
+						<Route exact path="/topicreg" element={<RegisterTopic/>} />
 						
 						{/* panelMember */}
 						<Route exact path="/pmTitleBar" element={<PmTitleBar/>} />
@@ -91,6 +97,7 @@ export default function Router() {
 						<Route exact path="/markingsche" element={<MarkingSchemes/>} />
 						<Route exact path="/submitteddocs" element={<SubmittedDocs/>} />
 						<Route exact path="/supervhome" element={<SupervisorHome/>} />
+						<Route exact path="/acceptReq" element={<AcceptRequests/>} />
 
 					</Routes>
 					<Footer/>
