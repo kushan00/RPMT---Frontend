@@ -18,6 +18,8 @@ import ExcelUpload from "./components/admin/ExcelUpload";
 import StdGroups from "./components/admin/StdGroups";
 import TempUpload from "./components/admin/TempUpload";
 import ViewAllRoles from "./components/admin/ViewAllRoles";
+import AdminViewSubmission from "./components/admin/AdminViewSubmission";
+import UpdateSubmission from "./components/admin/UpdateSubmission";
 
 // student
 import StudentTitleBar from "./components/student/StudentTitleBar";
@@ -29,6 +31,7 @@ import ReqSup from "./components/student/ReqSup"
 import StdHome from "./components/student/StdHome"
 import RegisterTopic from "./components/student/RegisterTopic"
 import ReqCoSup from "./components/student/ReqCoSup";
+import ViewSubmission from "./components/student/ViewSubmission";
 
 
 // supervisor
@@ -49,6 +52,7 @@ import PmHome from "./components/panelMember/PmHome";
 
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
+import ViewSubmission from "./components/student/ViewSubmission";
 
 //testing 
 let isauth = localStorage.getItem('user');
@@ -74,6 +78,10 @@ export default function Router() {
 						<Route exact path="/stdgrps" element={<StdGroups/>} />
 						<Route exact path="/tmpupload" element={<TempUpload/>} />
 						<Route exact path="/ViewAllRoles" element={<ViewAllRoles/>}/>
+						<Route exact path="/adminViewsub" element={<AdminViewSubmission/>}/>
+						<Route exact path="/updateSub/:id" element={<UpdateSubmission/>}/>
+
+
 
 						{/* student */}
 						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />
@@ -85,6 +93,7 @@ export default function Router() {
 						<Route exact path="/reqcosup" element={<ReqCoSup/>} />
 						<Route exact path="/stdhome" element={<StdHome/>} />
 						<Route exact path="/topicreg" element={<RegisterTopic/>} />
+						<Route exact path="/viewsub" element={<ViewSubmission/>} />
 						
 						{/* panelMember */}
 						<Route exact path="/pmTitleBar" element={<PmTitleBar/>} />
