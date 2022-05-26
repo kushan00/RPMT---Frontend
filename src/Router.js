@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Profiler, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import Profile from "./components/layout/Profile";
 
 import Dashboard from "./components/Dashboard";
 
@@ -63,7 +64,7 @@ export default function Router() {
 						<Route exact path="/dashboard" element={<Dashboard/>} />
 						<Route exact path="/register" element={<Register/>} />
 						<Route exact path="/login" element={<Login/>} />
-						
+						<Route exact path="/userprofile" element={<Profile/>} />
 						{/* staff */}
 						<Route exact path="/staffRegister" element={<RegisterStaff/>} />
 
