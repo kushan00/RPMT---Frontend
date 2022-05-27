@@ -4,7 +4,7 @@ import axios from 'axios';
 
 let RegisterURL = "http://localhost:5000/user/signup";
 let LoginURL = "http://localhost:5000/user/signin";
-let AuthURL = "http://localhost:8080/user/auth";
+let AuthURL = "http://localhost:5000/user/auth";
 let getAllUsers = "http://localhost:5000/user/getAllUsers";
 let CreateUser = "http://localhost:5000/user/createUser";
 let UpdateUser = "http://localhost:5000/user/updateUserById/";

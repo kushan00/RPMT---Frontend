@@ -13,33 +13,32 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
-import { Getalltopics } from '../../Services/TopicServices';
+import { getAllSubmissionTypes } from '../../Services/SubmissionTypeService';
 import moment from 'moment';
 
 
-const AcceptTopics = () => {
+const ViewSubmission = () => {
 
 
-  const [topicDetails, settopicDetails] = useState({});
+  const [submissionTypeDetails, setSubmissionTypeDetails] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const getAlltopics = async () => {
+  const GetAllsubmissionTypes = async () => {
     try {
       setLoading(true);
-      let data = await Getalltopics();
-      console.log("all topics", data);
+      let data = await getAllSubmissionTypes();
+      console.log("all submissionTypes", data);
       let newData = data?.data?.map((item) => {
         return {
          
-          GroupNo: item?.GroupNo,
-          Topic: item?.Topic,
-          Description: item?.Description,
-          date: item?.date,
+          subType: item?.subType,
+          description: item?.description,
+          deadline: item?.deadline,
           
         }
       })
 
-      settopicDetails(newData);
+      setSubmissionTypeDetails(newData);
       setLoading(false);
 
     } catch (error) {
@@ -49,60 +48,53 @@ const AcceptTopics = () => {
   }
 
   useEffect(() => {
-    getAlltopics();
+    GetAllsubmissionTypes();
   }, [])
 
 
   const columns = [
     {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Group ID</Badge>),
-      selector: "GroupNo",
-      sortable: false,
-      wrap: true,
-    },
-    {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Topic</Badge>),
-      selector: "Topic",
+      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Submission Type</Badge>),
+      selector: "subType",
       cell: (data) => (
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <Label>{data.Topic}<br /></Label>
+          <Label>{data.subType}<br /></Label>
         </div>
       ),
     },
     {
       name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Description</Badge>),
-      selector: "Description",
+      selector: "description",
       cell: (data) => (
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <Label>{data.Description}<br /></Label>
+          <Label>{data.description}<br /></Label>
+        </div>
+      ),
+    },
+    {
+      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Deadline</Badge>),
+      selector: "deadline",
+      cell: (data) => (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <Label>{data.deadline}<br /></Label>
         </div>
       ),
     },
 
     {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Date</Badge>),
-
-      cell: ({ date }) => (
-        <div>
-          <Badge color="secondary">{moment(date).format(" YYYY-MM-DD ")}</Badge>
-          <br />
-          <Badge color="primary">{moment(date).format(" h:mm A ")}</Badge>
-        </div>
-      ),
-    },
-
-    {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} ></Badge>),
+      // name: (<Badge color="secondary" style={{ fontSize: "15px" }} ></Badge>),
       
       cell: (data) => (
         <div style={{ display: "flex", flexDirection: "column" }}>
-          	<Button className="btn btn-warning" style={{ fontSize: "13px" }} ><b>Accept Topic</b></Button>
-            <br/>
-            <Button className="btn btn-danger" style={{ fontSize: "13px" }} ><b>Reject Topic</b></Button>
+            
+            <Button className="btn btn-success" style={{ fontSize: "13px" }} ><b> {data.subType} Submission<br /></b></Button>
         </div>
         
       ),
-    },
+    }, 
+
+    
+
 
   ];
 
@@ -112,11 +104,11 @@ const AcceptTopics = () => {
       <div style={{ margin: "10px" }}>
         <Card>
           <CardHeader>
-            <CardTitle style={{ color: "black", fontSize: "30px" }}><b>Register Topic Details</b></CardTitle>
+            <CardTitle style={{ color: "black", fontSize: "30px" }}><b>Submission Details</b></CardTitle>
           </CardHeader>
           <CardBody>
             <DataTable
-              data={topicDetails}
+              data={submissionTypeDetails}
               columns={columns}
 // noHeader
         // pagination
@@ -170,4 +162,4 @@ const AcceptTopics = () => {
 	);
 };
 
-export default AcceptTopics;
+export default ViewSubmission;

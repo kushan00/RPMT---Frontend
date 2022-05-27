@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Profiler, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import Profile from "./components/layout/Profile";
 
 import Dashboard from "./components/Dashboard";
 
@@ -18,6 +19,8 @@ import ExcelUpload from "./components/admin/ExcelUpload";
 import StdGroups from "./components/admin/StdGroups";
 import TempUpload from "./components/admin/TempUpload";
 import ViewAllRoles from "./components/admin/ViewAllRoles";
+import AdminViewSubmission from "./components/admin/AdminViewSubmission";
+import UpdateSubmission from "./components/admin/UpdateSubmission";
 
 // student
 import StudentTitleBar from "./components/student/StudentTitleBar";
@@ -29,16 +32,18 @@ import ReqSup from "./components/student/ReqSup"
 import StdHome from "./components/student/StdHome"
 import RegisterTopic from "./components/student/RegisterTopic"
 import ReqCoSup from "./components/student/ReqCoSup";
+import ViewSubmission from "./components/student/ViewSubmission";
 
 
-// supervisor
+// supervisor and co-supervisor
 import AcceptTopics from "./components/supervisor/AcceptTopics";
 import MarkingSchemes from "./components/supervisor/MarkingSchemes";
 import SubmittedDocs from "./components/supervisor/SubmittedDocs";
 import SupervisorHome from "./components/supervisor/SupervisorHome";
 import AcceptRequests from "./components/supervisor/AcceptRequests"
+import AccpetedRequests from "./components/supervisor/AccpetedRequests";
+import RejectedRequests from "./components/supervisor/RejectedRequests";
 
-// co-supervisor
 
 
 // panel-member
@@ -49,6 +54,8 @@ import PmHome from "./components/panelMember/PmHome";
 
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
+import ViewSubmission from "./components/student/ViewSubmission";
+
 
 //testing 
 let isauth = localStorage.getItem('user');
@@ -63,7 +70,7 @@ export default function Router() {
 						<Route exact path="/dashboard" element={<Dashboard/>} />
 						<Route exact path="/register" element={<Register/>} />
 						<Route exact path="/login" element={<Login/>} />
-						
+						<Route exact path="/userprofile" element={<Profile/>} />
 						{/* staff */}
 						<Route exact path="/staffRegister" element={<RegisterStaff/>} />
 
@@ -74,6 +81,10 @@ export default function Router() {
 						<Route exact path="/stdgrps" element={<StdGroups/>} />
 						<Route exact path="/tmpupload" element={<TempUpload/>} />
 						<Route exact path="/ViewAllRoles" element={<ViewAllRoles/>}/>
+						<Route exact path="/adminViewsub" element={<AdminViewSubmission/>}/>
+						<Route exact path="/updateSub/:id" element={<UpdateSubmission/>}/>
+
+
 
 						{/* student */}
 						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />
@@ -85,6 +96,7 @@ export default function Router() {
 						<Route exact path="/reqcosup" element={<ReqCoSup/>} />
 						<Route exact path="/stdhome" element={<StdHome/>} />
 						<Route exact path="/topicreg" element={<RegisterTopic/>} />
+						<Route exact path="/viewsub" element={<ViewSubmission/>} />
 						
 						{/* panelMember */}
 						<Route exact path="/pmTitleBar" element={<PmTitleBar/>} />
@@ -92,13 +104,14 @@ export default function Router() {
 						<Route exact path="/evatopics" element={<EvaluateTopics/>} />
 						<Route exact path="/pmhome" element={<PmHome/>} />
 
-						{/* supervisor */}
+						{/* supervisor and co-supervisor*/}
 						<Route exact path="/actopics" element={<AcceptTopics/>} />
 						<Route exact path="/markingsche" element={<MarkingSchemes/>} />
 						<Route exact path="/submitteddocs" element={<SubmittedDocs/>} />
 						<Route exact path="/supervhome" element={<SupervisorHome/>} />
 						<Route exact path="/acceptReq" element={<AcceptRequests/>} />
-
+						<Route exact path="/accepted-requests" element={<AccpetedRequests/>} />
+						<Route exact path="/rejected-requests" element={<RejectedRequests/>} />
 					</Routes>
 					<Footer/>
 				</Router>
