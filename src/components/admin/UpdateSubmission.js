@@ -12,6 +12,8 @@ import {
     Row,
     Label,
 } from "reactstrap";
+import Swal from 'sweetalert2';
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { updateSubmissionType } from "../../Services/SubmissionTypeService";
 import { getSubmissionTypeByID } from "../../Services/SubmissionTypeService";
@@ -67,11 +69,19 @@ const UpdateSubmission = () => {
         console.log("Update ", data);
         if (data?.status == 200) {
   
-            alert("Update Successfull..");
+            Swal.fire({
+				icon: 'success',
+				title: 'Successful!',
+				text: 'Submission type updated!',
+			  })
             navigate("/adminViewsub");
         }
         else {
-            alert("Update failed..");
+            Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Failed!',
+			  })
         }
     }
 

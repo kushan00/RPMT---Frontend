@@ -12,6 +12,7 @@ import {
   Row,
   Label,
 } from "reactstrap";
+import Swal from 'sweetalert2';
 
 import { createNewTopic } from "../../Services/TopicServices";
 
@@ -57,12 +58,20 @@ const RegisterTopic = () => {
     let data = await createNewTopic(regdata);
     console.log("Register Topic ", data);
     if (data?.status==201) {
-      alert("Topic Registration Success!");
+      Swal.fire({
+				icon: 'success',
+				title: 'Successful!',
+				text: 'Topic registered',
+			  })
       navigate("/dashboard");
 
     }
     else {
-      alert("Topic Registration Failed!");
+      Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Failed!',
+			  })
     }
   }
 
