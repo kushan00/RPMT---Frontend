@@ -12,6 +12,7 @@ import {
   Row,
   Label,
 } from "reactstrap";
+import Swal from 'sweetalert2';
 
 import { createNewSubmissionType } from "../../Services/SubmissionTypeService";
 
@@ -57,12 +58,20 @@ const CreateSubmission = () => {
     let data = await createNewSubmissionType(regdata);
     console.log(" submission Type ", data);
     if (data?.status==201) {
-      alert("submissionType Insert Successful!");
+      Swal.fire({
+				icon: 'success',
+				title: 'Successful!',
+				text: 'Submission type added!',
+			  })
       navigate("/adminviewsub");
 
     }
     else {
-      alert("submission Type Insert Failed!");
+      Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Failed!',
+			  })
     }
   }
 
