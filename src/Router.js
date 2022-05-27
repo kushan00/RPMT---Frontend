@@ -35,14 +35,15 @@ import ReqCoSup from "./components/student/ReqCoSup";
 import ViewSubmission from "./components/student/ViewSubmission";
 
 
-// supervisor
+// supervisor and co-supervisor
 import AcceptTopics from "./components/supervisor/AcceptTopics";
 import MarkingSchemes from "./components/supervisor/MarkingSchemes";
 import SubmittedDocs from "./components/supervisor/SubmittedDocs";
 import SupervisorHome from "./components/supervisor/SupervisorHome";
 import AcceptRequests from "./components/supervisor/AcceptRequests"
+import AccpetedRequests from "./components/supervisor/AccpetedRequests";
+import RejectedRequests from "./components/supervisor/RejectedRequests";
 
-// co-supervisor
 
 
 // panel-member
@@ -54,6 +55,7 @@ import PmHome from "./components/panelMember/PmHome";
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
 import ViewSubmission from "./components/student/ViewSubmission";
+
 
 //testing 
 let isauth = localStorage.getItem('user');
@@ -102,13 +104,14 @@ export default function Router() {
 						<Route exact path="/evatopics" element={<EvaluateTopics/>} />
 						<Route exact path="/pmhome" element={<PmHome/>} />
 
-						{/* supervisor */}
+						{/* supervisor and co-supervisor*/}
 						<Route exact path="/actopics" element={<AcceptTopics/>} />
 						<Route exact path="/markingsche" element={<MarkingSchemes/>} />
 						<Route exact path="/submitteddocs" element={<SubmittedDocs/>} />
 						<Route exact path="/supervhome" element={<SupervisorHome/>} />
 						<Route exact path="/acceptReq" element={<AcceptRequests/>} />
-
+						<Route exact path="/accepted-requests" element={<AccpetedRequests/>} />
+						<Route exact path="/rejected-requests" element={<RejectedRequests/>} />
 					</Routes>
 					<Footer/>
 				</Router>
