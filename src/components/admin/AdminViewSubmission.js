@@ -13,6 +13,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+import Swal from 'sweetalert2';
 import { getAllSubmissionTypes, deleteSubmissionType } from '../../Services/SubmissionTypeService';
 import moment from 'moment';
 
@@ -58,7 +59,11 @@ const AdminViewSubmission = () => {
     let data = await deleteSubmissionType(id);
     console.log("Delete ", data);
     if (!data?.data?.message) {
-      alert("delete failed..");
+      Swal.fire({
+				icon: 'success',
+				title: 'Successful!',
+				text: 'Submission type deleted!',
+			  })
     }
     else {
       alert(data?.data?.message);

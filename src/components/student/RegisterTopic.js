@@ -12,6 +12,7 @@ import {
   Row,
   Label,
 } from "reactstrap";
+import Swal from 'sweetalert2';
 
 import { createNewTopic } from "../../Services/TopicServices";
 
@@ -22,7 +23,7 @@ const RegisterTopic = () => {
   const [GroupNo, setGroupNo] = useState("");
   const [Topic, setTopic] = useState("");
   const [Description, setDescription] = useState("");
- 
+  const [LeaderITNum,setLeaderITNum] = useState("");
 
 
   const handleGroupNo = (e) => {
@@ -40,29 +41,40 @@ const RegisterTopic = () => {
     setDescription(e.target.value)
   }
 
+  const handleLeaderITNum = (e) => {
+    e.preventDefault();
+    setLeaderITNum(e.target.value)
+  }
+
 
 
   const regTopic = async (e) => {
     e.preventDefault();
-    var info = [Topic, Description]
-
     const regdata = {
       GroupNo: GroupNo,
-      Topic: info[0],
-      Description: info[1],
-     
+      Topic:Topic ,
+      Description: Description,
+      LeaderITNum: LeaderITNum
 
     }
     console.log("sending data", regdata);
     let data = await createNewTopic(regdata);
     console.log("Register Topic ", data);
     if (data?.status==201) {
-      alert("Topic Registration Success!");
+      Swal.fire({
+				icon: 'success',
+				title: 'Successful!',
+				text: 'Topic registered',
+			  })
       navigate("/dashboard");
 
     }
     else {
-      alert("Topic Registration Failed!");
+      Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Failed!',
+			  })
     }
   }
 
@@ -80,6 +92,8 @@ const RegisterTopic = () => {
                 {/* <Label>Enter Group Number as Follow (REG_(WD/WE)_GroupLeaderITnum)</Label> */}
                 <Input type="text" className="input" placeholder="Enter Group Number " value={GroupNo} onChange={(e) => handleGroupNo(e)} />
                 <br />
+                <Input type="text" className="input" placeholder="Enter Leader ITNumber " value={LeaderITNum} onChange={(e) => handleLeaderITNum(e)} />
+                <br/>
                 <textarea type="text" className="form-control" cols="73" rows="2" placeholder="Enter The Topic" value={Topic} onChange={(e) => handleTopic(e)} />
                 <br />
                 <textarea type="text" className="form-control" cols="73" rows="4" placeholder="Enter The Description" value={Description} onChange={(e) => handleDescription(e)} />
