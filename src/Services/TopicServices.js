@@ -15,10 +15,10 @@ export async function getTopicById(id) {
 
 export async function createNewTopic(data) {
   const alldata = {
-
     GroupNo: data.GroupNo,
     Topic: data.Topic,
     Description: data.Description,
+    LeaderITNum:data.LeaderITNum,
   }
 
   return await axios.post(createTopicURL, alldata);
