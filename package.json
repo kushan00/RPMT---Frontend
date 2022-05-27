@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kushan00/RPMT---Frontend#readme",
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "axios": "^0.21.4",
     "moment": "^2.29.3",
     "parcel": "^2.5.0",
