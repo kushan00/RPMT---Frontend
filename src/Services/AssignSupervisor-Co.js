@@ -36,5 +36,6 @@ export async function UpdateSuperviserRequests(id,data) {
 
 
 export async function updateCoSuperviserRequests(id,data) { 
+  console.log("service ",data);
   return await axios.patch(AcceptCoSuperviser + id,data);
 }
