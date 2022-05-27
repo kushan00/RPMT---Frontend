@@ -43,7 +43,8 @@ import SupervisorHome from "./components/supervisor/SupervisorHome";
 import AcceptRequests from "./components/supervisor/AcceptRequests"
 import AccpetedRequests from "./components/supervisor/AccpetedRequests";
 import RejectedRequests from "./components/supervisor/RejectedRequests";
-
+import AcceptedTopics from "./components/supervisor/AcceptedTopics";
+import RejectedTopics from "./components/supervisor/RejectedTopics";
 
 
 // panel-member
@@ -55,6 +56,7 @@ import PmHome from "./components/panelMember/PmHome";
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
 import ViewSubmission from "./components/student/ViewSubmission";
+
 
 
 //testing 
@@ -112,6 +114,9 @@ export default function Router() {
 						<Route exact path="/acceptReq" element={<AcceptRequests/>} />
 						<Route exact path="/accepted-requests" element={<AccpetedRequests/>} />
 						<Route exact path="/rejected-requests" element={<RejectedRequests/>} />
+						<Route exact path="/accepted-topics" element={<AcceptedTopics/>} />
+						<Route exact path="/rejected-topics" element={<RejectedTopics/>} />
+
 					</Routes>
 					<Footer/>
 				</Router>
