@@ -30,12 +30,12 @@ const AcceptTopics = () => {
       console.log("all topics", data);
       let newData = data?.data?.map((item) => {
         return {
-         
+
           GroupNo: item?.GroupNo,
           Topic: item?.Topic,
           Description: item?.Description,
           date: item?.date,
-          
+
         }
       })
 
@@ -55,13 +55,13 @@ const AcceptTopics = () => {
 
   const columns = [
     {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Group ID</Badge>),
+      name: (<Badge color="dark" style={{ fontSize: "15px" }} >Group ID</Badge>),
       selector: "GroupNo",
       sortable: false,
       wrap: true,
     },
     {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Topic</Badge>),
+      name: (<Badge color="dark" style={{ fontSize: "15px" }} >Topic</Badge>),
       selector: "Topic",
       cell: (data) => (
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -70,7 +70,7 @@ const AcceptTopics = () => {
       ),
     },
     {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Description</Badge>),
+      name: (<Badge color="dark" style={{ fontSize: "15px" }} >Description</Badge>),
       selector: "Description",
       cell: (data) => (
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -80,27 +80,26 @@ const AcceptTopics = () => {
     },
 
     {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} >Date</Badge>),
+      name: (<Badge color="dark" style={{ fontSize: "15px" }} >Date</Badge>),
 
       cell: ({ date }) => (
         <div>
           <Badge color="secondary">{moment(date).format(" YYYY-MM-DD ")}</Badge>
           <br />
-          <Badge color="primary">{moment(date).format(" h:mm A ")}</Badge>
+          <Badge color="secondary">{moment(date).format(" h:mm A ")}</Badge>
         </div>
       ),
     },
 
     {
-      name: (<Badge color="secondary" style={{ fontSize: "15px" }} ></Badge>),
-      
+      name: (<Badge color="dark" style={{ fontSize: "15px" }} ></Badge>),
+
       cell: (data) => (
         <div style={{ display: "flex", flexDirection: "column" }}>
-          	<Button className="btn btn-warning" style={{ fontSize: "13px" }} ><b>Accept Topic</b></Button>
-            <br/>
-            <Button className="btn btn-danger" style={{ fontSize: "13px" }} ><b>Reject Topic</b></Button>
+          <Button className="btn btn-warning" style={{ fontSize: "13px" }} ><b>Acceptance Of Topic</b></Button>
+          
         </div>
-        
+
       ),
     },
 
@@ -113,39 +112,43 @@ const AcceptTopics = () => {
         <Card>
           <CardHeader>
             <CardTitle style={{ color: "black", fontSize: "30px" }}><b>Register Topic Details</b></CardTitle>
+            <Button className="btn btn-success" style={{ fontSize: "13px", marginLeft: "25%" }} href=""><b>Accepted Topics</b></Button>
+            <Button className="btn btn-danger" style={{ fontSize: "13px", marginLeft: "25%" }} href=""><b>Rejected Topics</b></Button>
+            <br></br>
+            <br></br>
           </CardHeader>
           <CardBody>
             <DataTable
               data={topicDetails}
               columns={columns}
-// noHeader
-        // pagination
-        // paginationServer={paginationServer}
-        // paginationComponentOptions={{
-        //     rowsPerPageText: "Record Per Page:",
-        //     rangeSeparatorText: "of",
-        //     selectAllRowsItemText: "All",
-        // }}
-        // onChangeRowsPerPage={handelRowChange}
-        // highlightOnHover
-        // paginationPerPage={20}
-        // paginationTotalRows={totalCount}
-        // paginationDefaultPage={1}
-        // onChangePage={handelPageChange}
-        // paginationRowsPerPageOptions={[20, 50, 70]}
-        // // expandableRows
-        // // expandOnRowClicked
-        progressPending={loading}
-        // progressComponent={<CustomLoader />}
-        // expandableRowsComponent={
-        //   <ExpandableTable title={title} locationTitle={locationTitle} />
-        // }
-      />
-      </CardBody>
-    </Card>
+              // noHeader
+              // pagination
+              // paginationServer={paginationServer}
+              // paginationComponentOptions={{
+              //     rowsPerPageText: "Record Per Page:",
+              //     rangeSeparatorText: "of",
+              //     selectAllRowsItemText: "All",
+              // }}
+              // onChangeRowsPerPage={handelRowChange}
+              // highlightOnHover
+              // paginationPerPage={20}
+              // paginationTotalRows={totalCount}
+              // paginationDefaultPage={1}
+              // onChangePage={handelPageChange}
+              // paginationRowsPerPageOptions={[20, 50, 70]}
+              // // expandableRows
+              // // expandOnRowClicked
+              progressPending={loading}
+            // progressComponent={<CustomLoader />}
+            // expandableRowsComponent={
+            //   <ExpandableTable title={title} locationTitle={locationTitle} />
+            // }
+            />
+          </CardBody>
+        </Card>
       </div>
 
-	  {/* <div>
+      {/* <div>
 		  <Modal
 		  	isOpen={openModal}
 			  className="modal-dialog-centered"
@@ -166,8 +169,8 @@ const AcceptTopics = () => {
 			  </ModalBody>
 		  </Modal>
 	  </div> */}
-		</div>
-	);
+    </div>
+  );
 };
 
 export default AcceptTopics;
