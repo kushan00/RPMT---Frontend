@@ -20,6 +20,7 @@
   "homepage": "https://github.com/kushan00/RPMT---Frontend#readme",
   "dependencies": {
     "axios": "^0.21.4",
+    "firebase": "^9.8.1",
     "moment": "^2.29.3",
     "parcel": "^2.5.0",
     "prop-types": "^15.8.1",
@@ -34,7 +35,7 @@
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
-    "sweetalert2": "^11.4.16",
+    "sweetalert2": "^11.4.17",
     "uuid": "^3.4.0"
   }
 }
