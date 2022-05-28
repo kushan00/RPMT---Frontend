@@ -21,6 +21,7 @@ import TempUpload from "./components/admin/TempUpload";
 import ViewAllRoles from "./components/admin/ViewAllRoles";
 import AdminViewSubmission from "./components/admin/AdminViewSubmission";
 import UpdateSubmission from "./components/admin/UpdateSubmission";
+import AllTemps from "./components/admin/AllTemps";
 
 // student
 import StudentTitleBar from "./components/student/StudentTitleBar";
@@ -45,7 +46,7 @@ import AccpetedRequests from "./components/supervisor/AccpetedRequests";
 import RejectedRequests from "./components/supervisor/RejectedRequests";
 import AcceptedTopics from "./components/supervisor/AcceptedTopics";
 import RejectedTopics from "./components/supervisor/RejectedTopics";
-
+import MainChat from "./components/ChatSystem/MainChat";
 
 // panel-member
 import PmTitleBar from "./components/panelMember/PmTitleBar";
@@ -56,6 +57,7 @@ import PmHome from "./components/panelMember/PmHome";
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
 import ViewSubmission from "./components/student/ViewSubmission";
+
 
 
 
@@ -85,12 +87,12 @@ export default function Router() {
 						<Route exact path="/ViewAllRoles" element={<ViewAllRoles/>}/>
 						<Route exact path="/adminViewsub" element={<AdminViewSubmission/>}/>
 						<Route exact path="/updateSub/:id" element={<UpdateSubmission/>}/>
-
+						<Route exact path="/alltemps" element={<AllTemps/>} />
 
 
 						{/* student */}
 						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />
-						<Route exact path="/addsub" element={<AddSubmission/>} />
+						<Route exact path="/add-submission/:id" element={<AddSubmission/>} />
 						<Route exact path="/creategrp" element={<CreateGroup/>} />
 						<Route exact path="/downtmp" element={<DownloadTemp/>} />
 						<Route exact path="/findgrp" element={<FindGroup/>} />
@@ -116,6 +118,7 @@ export default function Router() {
 						<Route exact path="/rejected-requests" element={<RejectedRequests/>} />
 						<Route exact path="/accepted-topics" element={<AcceptedTopics/>} />
 						<Route exact path="/rejected-topics" element={<RejectedTopics/>} />
+						<Route excat path="/group-chat" element={<MainChat/>}/>
 
 					</Routes>
 					<Footer/>

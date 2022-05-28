@@ -21,6 +21,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "axios": "^0.21.4",
+    "firebase": "^9.8.1",
     "moment": "^2.29.3",
     "parcel": "^2.5.0",
     "prop-types": "^15.8.1",
@@ -31,10 +32,12 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
+    "react-scroll-to-bottom": "^4.2.0",
     "reactstrap": "^9.0.2",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "socket.io-client": "^4.5.1",
     "sweetalert2": "^11.4.16",
     "uuid": "^3.4.0"
   }
