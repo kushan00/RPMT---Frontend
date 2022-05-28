@@ -2,9 +2,12 @@ import React from 'react'
 import { useState } from "react";
 import axios from 'axios';
 import FileInput from "./FileInput";
+import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const TempUpload = () => {
 
+  const navigate = useNavigate();
   const [data, setData] = useState({
     topic: "",
     description: "",
@@ -25,7 +28,24 @@ const TempUpload = () => {
     try {
       const url = "http://localhost:5000/fileupload/uploadfile"
       const { data: res } = await axios.post(url, data);
-      console.log(res.data)
+      console.log(res)
+
+      if (res?.status == 201) {
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Congrats!',
+          text: 'Document Upload successfull...!',
+        })
+        navigate("/alltemps")
+      }
+      else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Document Upload Failed!',
+        })
+      }
     } catch (error) {
 
       console.log(error)

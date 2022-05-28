@@ -37,7 +37,7 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
 	};
 
 	return (
-		<div className={styles.container}>
+		<div className=''>
 			<input
 				type="file"
 				ref={inputRef}
@@ -79,12 +79,12 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
 				</button></center>
 			)}
 			{progressShow && progress < 100 && (
-				<div className={styles.progress_container}>
+				<div className=''>
 					<p>{progress}% Completed...</p>
 				</div>
 			)}
 			{progress === 100 && (
-				<div className={styles.progress_container}>
+				<div className=''>
 					<center><img src={check} alt="check circle" style={{width:'80px', height:'auto'}} /></center>
 				</div>
 			)}

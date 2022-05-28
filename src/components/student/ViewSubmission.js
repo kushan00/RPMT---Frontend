@@ -34,7 +34,7 @@ const ViewSubmission = () => {
           subType: item?.subType,
           description: item?.description,
           deadline: item?.deadline,
-          
+          _id: item?._id
         }
       })
 
@@ -87,7 +87,7 @@ const ViewSubmission = () => {
       cell: (data) => (
         <div style={{ display: "flex", flexDirection: "column" }}>
             
-            <Button className="btn btn-success" style={{ fontSize: "13px" }} ><b> {data.subType} Submission<br /></b></Button>
+            <Button className="btn btn-success" style={{ fontSize: "13px" }} href={`/add-submission/${data?._id}`}><b> {data.subType} Submission<br /></b></Button>
         </div>
         
       ),
