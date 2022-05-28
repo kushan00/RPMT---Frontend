@@ -49,16 +49,17 @@ const Navbar = () => {
                 <a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/adminviewsub" aria-current="page">Ceate Submissions</a>
                 <a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/HandleStaff" aria-current="page">Allocate panel Members</a>
 				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Create Marking Schemes</a>
-				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Upload Templates</a>
+				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/tmpupload" aria-current="page">Upload Templates</a>
 				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/ViewAllRoles" aria-current="page">View Roles</a>
+				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/alltemps" aria-current="page">All Templates</a>
 
-                {/* superviser Pages */}
+                {/* superviser/ co-supervisor Pages */}
                 <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser"  ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/actopics" aria-current="page">Accept Topics</a>
                 <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/group-chat" aria-current="page">Group Chats</a>
 				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Submissions</a>
 				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/acceptReq" aria-current="page">Accept Requests</a>
 
-				{/*co_superviser pages */}
+				{/*panel member pages */}
 				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Topics</a>
 				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate student's Presentations</a>
 

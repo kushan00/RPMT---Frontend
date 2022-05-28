@@ -21,6 +21,7 @@ import TempUpload from "./components/admin/TempUpload";
 import ViewAllRoles from "./components/admin/ViewAllRoles";
 import AdminViewSubmission from "./components/admin/AdminViewSubmission";
 import UpdateSubmission from "./components/admin/UpdateSubmission";
+import AllTemps from "./components/admin/AllTemps";
 
 // student
 import StudentTitleBar from "./components/student/StudentTitleBar";
@@ -86,12 +87,12 @@ export default function Router() {
 						<Route exact path="/ViewAllRoles" element={<ViewAllRoles/>}/>
 						<Route exact path="/adminViewsub" element={<AdminViewSubmission/>}/>
 						<Route exact path="/updateSub/:id" element={<UpdateSubmission/>}/>
-
+						<Route exact path="/alltemps" element={<AllTemps/>} />
 
 
 						{/* student */}
 						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />
-						<Route exact path="/addsub" element={<AddSubmission/>} />
+						<Route exact path="/add-submission/:id" element={<AddSubmission/>} />
 						<Route exact path="/creategrp" element={<CreateGroup/>} />
 						<Route exact path="/downtmp" element={<DownloadTemp/>} />
 						<Route exact path="/findgrp" element={<FindGroup/>} />
