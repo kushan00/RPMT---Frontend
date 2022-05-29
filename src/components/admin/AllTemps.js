@@ -37,7 +37,6 @@ const AllTemps = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        
                             {songs.map((song, index) => (
                               <tr key={index}>  
                                 <th scope='row'>{index+1}</th>
@@ -47,7 +46,6 @@ const AllTemps = () => {
                                 <td><a className='btn btn-outline-danger' href={song.file}>click here to get the file</a></td>
                             </tr>
                             ))}
-                        
                     </tbody>
                 </table>
 
