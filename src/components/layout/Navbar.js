@@ -42,7 +42,7 @@ const Navbar = () => {
                 <a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/reqsup" aria-current="page">Request Superviser</a>
                 <a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/reqcosup" aria-current="page">Request co-superviser</a>
 				<a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/viewsub" aria-current="page">Submissions</a>
-				<a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Downloads</a>
+				<a style={{ display: userRole == "student" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/downtmp" aria-current="page">Downloads</a>
 
                 {/*  admin Pages */}
 				<a style={{ display: userRole == "admin" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/stdgrps" aria-current="page">All Groups</a>
