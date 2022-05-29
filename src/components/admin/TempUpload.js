@@ -51,6 +51,7 @@ const TempUpload = () => {
       console.log(error)
     }
   };
+  
   return (
     <div className="container" style={{ width: '30%', }}>
       <form className='form-group' onSubmit={handleSubmit} >
@@ -95,6 +96,10 @@ const TempUpload = () => {
           Upload Document
         </button></center>
       </form>
+      <div>
+        <a className='btn btn-secondary' href='/alltemps'>All Documents</a>&nbsp;
+        <a className='btn btn-info' href='/downtmp'>Download Documents std View</a>
+      </div>
     </div>
   )
 }

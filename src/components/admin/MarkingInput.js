@@ -13,7 +13,7 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
 		const fileName = new Date().getTime() + value.name;
 		const storageRef = ref(
 			storage,
-			type === "image" ? `/Images/${fileName}` : `/Files/${fileName}`
+			type === "image" ? `/Images/${fileName}` : `/MarkingSchemes/${fileName}`
 		);
 		const uploadTask = uploadBytesResumable(storageRef, value);
 		uploadTask.on(

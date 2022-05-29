@@ -15,7 +15,7 @@ import Dashboard from "./components/Dashboard";
 //admin
 import HandleStaff from "./components/admin/HandleStaff";
 import CreateSubmission from "./components/admin/CreateSubmission";
-import ExcelUpload from "./components/admin/ExcelUpload";
+import MarkingUpload from "./components/admin/MarkingUpload";
 import StdGroups from "./components/admin/StdGroups";
 import TempUpload from "./components/admin/TempUpload";
 import ViewAllRoles from "./components/admin/ViewAllRoles";
@@ -81,7 +81,7 @@ export default function Router() {
 						{/* admin */}
 						<Route exact path="/HandleStaff" element={<HandleStaff/>} />
 						<Route exact path="/createsub" element={<CreateSubmission/>} />
-						<Route exact path="/exupload" element={<ExcelUpload/>} />
+						<Route exact path="/markingup" element={<MarkingUpload/>} />
 						<Route exact path="/stdgrps" element={<StdGroups/>} />
 						<Route exact path="/tmpupload" element={<TempUpload/>} />
 						<Route exact path="/ViewAllRoles" element={<ViewAllRoles/>}/>
