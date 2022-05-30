@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { useNavigate ,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { LoginCustomer } from "../../Services/AuthServices";
 import Swal from 'sweetalert2';
 
@@ -14,7 +14,7 @@ const Login = () => {
 
 	const { email, password } = formData;
 
-	const onChange = (e) =>{
+	const onChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	}
 
@@ -22,33 +22,39 @@ const Login = () => {
 	const onSubmit = async (e) => {
 
 		e.preventDefault();
-
 		console.log("data",formData)
 		let data = await LoginCustomer(formData);
-		console.log("data",data?.data);
-		if(data?.data?.userRole)
-		{
-		localStorage.setItem("token",data?.data?.token);
-		localStorage.setItem("userRole",data?.data?.userRole);
-		localStorage.setItem("user",data?.data?.user);
-		navigate("/dashboard");
+		console.log("data", data?.data);
+		if (data?.data?.userRole) {
+			localStorage.setItem("token", data?.data?.token);
+			localStorage.setItem("userRole", data?.data?.userRole);
+			localStorage.setItem("user", data?.data?.user);
+			navigate("/dashboard");
 		}
-		else
-		{
+		else {
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
 				text: 'Login Failed!',
-			  })
+			})
 		}
 	};
 
 
 	return (
-		<div className="login-form">
-			<h1 className="heading">Sign In</h1>
+		<div className="card" style={{
+			width: '800px',
+			border: '3px solid black',
+			marginRight: '50px',
+			marginLeft: '350px',
+			marginBottom: '50px',
+			marginTop: '50px',
+			backgroundColor: '#DCDCDC'
+		}}>
+			<center>
+			<h1 className="heading">Log In</h1>
 			<p className="lead">
-				<i className="fas fa-user"></i> Sign Into Your Account
+				<i className="fas fa-user"></i> Log Into Your Account
 			</p>
 			<br />
 			<form className="form" onSubmit={(e) => onSubmit(e)}>
@@ -78,6 +84,7 @@ const Login = () => {
 			<p className="link">
 				Don't have an account? <Link to="/register">Sign Up</Link>
 			</p>
+			</center>
 		</div>
 	);
 };
