@@ -12,6 +12,7 @@ import {
 import { AuthCustomer , UpdateAdmin } from "../../Services/AuthServices";
 import Swal from "sweetalert2";
 import moment from "moment";
+import profile from '../../img/user.png'
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -116,6 +117,7 @@ const Profile = () => {
   return (
     <div style={{ marginTop: "70px", marginBottom: "70px" }}>
       <div>
+        <center>
         <Card className="" style={{ marginLeft: "30px", marginRight: "30px" }}>
           <CardHeader>
             <CardTitle style={{ color: "purple", fontSize: "30px" }}>
@@ -123,6 +125,7 @@ const Profile = () => {
             </CardTitle>
           </CardHeader>
           <CardBody>
+          <img src={profile} style={{ width: 200, marginTop: '10px', marginBottom: '10px', marginLeft: '10px', marginRight: '10px' }}></img>
             <div style={{ width: "600px" }}>
               <Form>
                 <Input
@@ -183,6 +186,7 @@ const Profile = () => {
             </div>
           </CardBody>
         </Card>
+        </center>
       </div>
     </div>
   );

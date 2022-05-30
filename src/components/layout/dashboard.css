@@ -7,3 +7,10 @@
     display: inline-block;
     line-height: 1em;
   }
+
+  .home{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 280%;
+    text-shadow: 1px 1px 2px black, 0 0 18px rgb(30, 173, 90), 0 0 2px rgb(38, 94, 45);
+    
+  }
