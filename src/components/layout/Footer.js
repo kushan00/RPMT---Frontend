@@ -11,10 +11,10 @@ const Footer = () => {
 
 	return (
 		<div>
-			<div>
+			<div style={{marginTop:'100px'}}>
                  <footer className="bg-dark text-center text-white">
                    
-                    <div className="container p-4 pb-0">
+                    <div className="container p-4 pb-0" >
                        
                         <section className="mb-4">
                      

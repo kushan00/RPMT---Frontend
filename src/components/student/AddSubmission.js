@@ -100,6 +100,7 @@ const AddSubmission = () => {
             name="topic"
             onChange={handleChange}
             value={data.topic}
+            disabled='true'
           />
           <label style={{ marginTop: '15px' }}>Add Your Submission Here</label>
           <FileInput
