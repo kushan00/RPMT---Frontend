@@ -47,9 +47,11 @@ import AccpetedRequests from "./components/supervisor/AccpetedRequests";
 import RejectedRequests from "./components/supervisor/RejectedRequests";
 import AcceptedTopics from "./components/supervisor/AcceptedTopics";
 import RejectedTopics from "./components/supervisor/RejectedTopics";
+import StdSubmissions from "./components/supervisor/StdSubmissions";
 import MainChat from "./components/ChatSystem/MainChat";
 import AssignedGroups from "./components/supervisor/AssignedGroups";
 import SelectedGroupDetails from "./components/supervisor/SelectedGroupDetails";
+
 
 // panel-member
 import PmTitleBar from "./components/panelMember/PmTitleBar";
@@ -108,7 +110,7 @@ export default function Router() {
 						{/* panelMember */}
 						<Route exact path="/pmTitleBar" element={<PmTitleBar/>} />
 						<Route exact path="/evapresentation" element={<EvaluatePres/>} />
-						<Route exact path="/evatopics" element={<EvaluateTopics/>} />
+						<Route exact path="/evaluate-topics" element={<AcceptTopics/>} />
 						<Route exact path="/pmhome" element={<PmHome/>} />
 
 						{/* supervisor and co-supervisor*/}
@@ -121,9 +123,11 @@ export default function Router() {
 						<Route exact path="/rejected-requests" element={<RejectedRequests/>} />
 						<Route exact path="/accepted-topics" element={<AcceptedTopics/>} />
 						<Route exact path="/rejected-topics" element={<RejectedTopics/>} />
+						<Route exact path="/seesubmissions" element={<StdSubmissions/>} />
 						<Route excat path="/group-chat" element={<MainChat/>}/>
 						<Route exact path="/assigned-groups" element={<AssignedGroups/>}/>
 						<Route exact path="/group-selected/:id" element={<SelectedGroupDetails/>}/>
+
 					</Routes>
 					<Footer/>
 				</Router>

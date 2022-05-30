@@ -20,8 +20,9 @@ const Login = () => {
 
 
 	const onSubmit = async (e) => {
+
 		e.preventDefault();
-		console.log("data", formData)
+		console.log("data",formData)
 		let data = await LoginCustomer(formData);
 		console.log("data", data?.data);
 		if (data?.data?.userRole) {

@@ -4,6 +4,7 @@ import axios from 'axios';
 import FileInput from "./FileInput";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import { validateMarkingUp } from './Validation';
 
 const TempUpload = () => {
 
@@ -24,38 +25,49 @@ const TempUpload = () => {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault()
-    try {
-      const url = "http://localhost:5000/fileupload/uploadfile"
-      const { data: res } = await axios.post(url, data);
-      console.log(res)
 
-      if (res?.status == 201) {
+    var validate = validateMarkingUp(data);
 
-        Swal.fire({
-          icon: 'success',
-          title: 'Congrats!',
-          text: 'Document Upload successfull...!',
-        })
-        navigate("/alltemps")
-      }
-      else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Document Upload Failed!',
-        })
-      }
-    } catch (error) {
-
-      console.log(error)
+    if (validate.status == false) {
+      alert(validate.message);
     }
+
+    else {
+      try {
+        const url = "http://localhost:5000/fileupload/uploadfile"
+        const { data: res } = await axios.post(url, data);
+        console.log(res)
+
+        if (res?.status == 201) {
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Congrats!',
+            text: 'Document Upload successfull...!',
+          })
+          navigate("/alltemps")
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Document Upload Failed!',
+          })
+        }
+      } catch (error) {
+
+        console.log(error)
+      }
+    }
+
   };
-  
+
   return (
     <div className="container" style={{ width: '30%', }}>
       <form className='form-group' onSubmit={handleSubmit} >
-        <h1 >Document upload Form</h1>
+        <h1 >Template upload Form</h1>
 
         <label style={{ marginTop: '15px' }}>Enter Topic</label>
         <input

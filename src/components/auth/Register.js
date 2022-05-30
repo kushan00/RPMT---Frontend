@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RegisterStudent } from "../../Services/AuthServices";
 import Swal from 'sweetalert2';
+import { ValidateSignUp } from "./Validation";
 
 const Register = () => {
 
@@ -12,7 +13,7 @@ const Register = () => {
 		email: "",
 		password: "",
 		password2: "",
-		ITnumber:"",
+		ITnumber:"IT",
 		mobileno:"+94"
 	});
 
@@ -22,34 +23,44 @@ const Register = () => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 
 	const onSubmit = async (e) => {
-		console.log("Form data", e);
+
 		e.preventDefault();
-		if (password !== password2) {
-			alert("Password do not match", "danger");
-		} else {
-			let data = await RegisterStudent(formData);
-			console.log("data",data)
-			if(data?.data?.userRole)
-			{
-			localStorage.setItem("token",data?.data?.token);
-			localStorage.setItem("userRole",data?.data?.userRole);
-			localStorage.setItem("user",data?.data?.user);
-			Swal.fire({
-				icon: 'success',
-				title: 'Congrats!',
-				text: 'Register successfull...!',
-			  })
-			navigate("/dashboard");
-			}
-			else
-			{
-				Swal.fire({
-					icon: 'error',
-					title: 'Oops...',
-					text: 'Registration Failed..!',
-				  })
-			}
+
+		let validate = ValidateSignUp(formData);
+
+		if(validate.status == false)
+		{
+			alert(validate.message);
 		}
+
+		else{
+				if (password !== password2) {
+					alert("Password do not match...", "danger");
+				} else {
+					let data = await RegisterStudent(formData);
+					console.log("data",data)
+					if(data?.data?.userRole)
+					{
+					localStorage.setItem("token",data?.data?.token);
+					localStorage.setItem("userRole",data?.data?.userRole);
+					localStorage.setItem("user",data?.data?.user);
+					Swal.fire({
+						icon: 'success',
+						title: 'Congrats!',
+						text: 'Register successfull...!',
+					})
+					navigate("/dashboard");
+					}
+					else
+					{
+						Swal.fire({
+							icon: 'error',
+							title: 'Oops...',
+							text: 'Registration Failed..!',
+						})
+					}
+				}
+			}
 	};
 
 

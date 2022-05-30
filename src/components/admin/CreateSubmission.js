@@ -13,6 +13,7 @@ import {
   Label,
 } from "reactstrap";
 import Swal from 'sweetalert2';
+import { validateCreateSub } from "./Validation";
 
 import { createNewSubmissionType } from "../../Services/SubmissionTypeService";
 
@@ -20,7 +21,7 @@ const CreateSubmission = () => {
 
   const navigate = useNavigate();
 
-  
+
   const [subType, setSubType] = useState("");
   const [description, setDescription] = useState("");
   const [deadline, setDeadline] = useState("");
@@ -44,35 +45,44 @@ const CreateSubmission = () => {
 
 
   const regSubmissionType = async (e) => {
+
     e.preventDefault();
-    var info = [subType, description,deadline]
+
+    var info = [subType, description, deadline]
 
     const regdata = {
       subType: subType,
       description: description,
       deadline: deadline
-     
 
     }
-    console.log("sending data", regdata);
-    let data = await createNewSubmissionType(regdata);
-    console.log(" submission Type ", data);
-    if (data?.status==201) {
-      Swal.fire({
-				icon: 'success',
-				title: 'Successful!',
-				text: 'Submission type added!',
-			  })
-      navigate("/adminviewsub");
+    let validate = validateCreateSub(regdata);
 
+    if (validate.status == false) {
+      alert(validate.message);
     }
     else {
-      Swal.fire({
-				icon: 'error',
-				title: 'Oops...',
-				text: 'Failed!',
-			  })
+      console.log("sending data", regdata);
+      let data = await createNewSubmissionType(regdata);
+      console.log(" submission Type ", data);
+      if (data?.status == 201) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Successful!',
+          text: 'Submission type added!',
+        })
+        navigate("/adminviewsub");
+
+      }
+      else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Failed!',
+        })
+      }
     }
+
   }
 
   return (
@@ -91,9 +101,9 @@ const CreateSubmission = () => {
                 <br />
                 <textarea type="text" className="form-control" cols="73" rows="2" placeholder="Enter The description" value={description} onChange={(e) => handleDescription(e)} />
                 <br />
-                <Input type="text" className="input" placeholder="Enter submission type" value={deadline} onChange={(e) => handleDeadline(e)} />
+                <Input type="text" className="input" placeholder="Enter DeadLine" value={deadline} onChange={(e) => handleDeadline(e)} />
                 <br />
-                
+
 
                 <Button className="btn btn-success" onClick={(e) => regSubmissionType(e)} >Submit</Button>
               </Form>

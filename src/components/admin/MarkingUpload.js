@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import FileInput from "./MarkingInput";
+import { validateMarkingUp } from './Validation';
 
 const MarkingUpload = () => {
 
@@ -22,32 +23,43 @@ const MarkingUpload = () => {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault()
-    try {
-      const url = "http://localhost:5000/marking/uploadmarking"
-      const { data: res } = await axios.post(url, data);
-      console.log(res)
 
-      if (res?.status == 201) {
-
-        Swal.fire({
-          icon: 'success',
-          title: 'Congrats!',
-          text: 'Document Upload successfull...!',
-        })
-        // navigate("/alltemps")
-      }
-      else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Document Upload Failed!',
-        })
-      }
-    } catch (error) {
-
-      console.log(error)
+    var validate = validateMarkingUp(data);
+    if (validate.status == false) {
+      alert(validate.message);
     }
+
+    else {
+      try {
+        const url = "http://localhost:5000/marking/uploadmarking"
+        const { data: res } = await axios.post(url, data);
+        console.log(res)
+
+        if (res?.status == 201) {
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Congrats!',
+            text: 'Document Upload successfull...!',
+          })
+          // navigate("/alltemps")
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Document Upload Failed!',
+          })
+        }
+      } catch (error) {
+
+        console.log(error)
+      }
+    }
+
+
   };
 
   return (

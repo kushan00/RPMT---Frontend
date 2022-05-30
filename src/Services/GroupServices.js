@@ -1,11 +1,12 @@
 import axios from 'axios';
+import {StartUrl} from "../configs/Url.json";
 
-let getAllGroupsURL = "http://localhost:5000/group/getAllGroups";
-let CreateGroupURL = "http://localhost:5000/group/createGroup";
-let UpdateGroupURL = "http://localhost:5000/group/updateGroupById/";
-let DeleteGroupURL = "http://localhost:5000/group/deleteGroup/";
-let GetGroupByIDURL = "http://localhost:5000/group/getGroupById/";
-let GetgroupByNumberURL = "http://localhost:5000/group/getgroupByNumber/";
+let getAllGroupsURL = StartUrl + "group/getAllGroups";
+let CreateGroupURL = StartUrl + "group/createGroup";
+let UpdateGroupURL = StartUrl + "group/updateGroupById/";
+let DeleteGroupURL = StartUrl + "group/deleteGroup/";
+let GetGroupByIDURL = StartUrl + "group/getGroupById/";
+let GetgroupByNumberURL = StartUrl + "group/getgroupByNumber/";
 
 
 export async function GetallGroups(){
