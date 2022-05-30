@@ -110,7 +110,7 @@ export default function Router() {
 						{/* panelMember */}
 						<Route exact path="/pmTitleBar" element={<PmTitleBar/>} />
 						<Route exact path="/evapresentation" element={<EvaluatePres/>} />
-						<Route exact path="/evatopics" element={<EvaluateTopics/>} />
+						<Route exact path="/evaluate-topics" element={<AcceptTopics/>} />
 						<Route exact path="/pmhome" element={<PmHome/>} />
 
 						{/* supervisor and co-supervisor*/}
