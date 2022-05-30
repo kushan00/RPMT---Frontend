@@ -55,14 +55,14 @@ const Navbar = () => {
                 {/* superviser/ co-supervisor Pages */}
                 <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser"  ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/actopics" aria-current="page">Accept Topics</a>
                 <a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Group Chats</a>
-				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Submissions</a>
+				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/seesubmissions" aria-current="page">Evaluate Submissions</a>
 				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/acceptReq" aria-current="page">Accept Requests</a>
 				<a style={{ display: userRole == "superviser" ||  userRole == "co_superviser" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/markingsche" aria-current="page">Marking Schemes</a>
 
 				{/*panel member pages */}
 				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate Topics</a>
 				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="" aria-current="page">Evaluate student's Presentations</a>
-
+				<a style={{ display: userRole == "panel_member" ? "flex" : "none" , textDecoration:"none"}} className="sidebarListItem" href="/seesubmissions" aria-current="page">Evaluate Submissions</a>
 
               </div>
             </div>

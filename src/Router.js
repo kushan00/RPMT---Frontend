@@ -46,7 +46,7 @@ import AccpetedRequests from "./components/supervisor/AccpetedRequests";
 import RejectedRequests from "./components/supervisor/RejectedRequests";
 import AcceptedTopics from "./components/supervisor/AcceptedTopics";
 import RejectedTopics from "./components/supervisor/RejectedTopics";
-
+import StdSubmissions from "./components/supervisor/StdSubmissions";
 
 // panel-member
 import PmTitleBar from "./components/panelMember/PmTitleBar";
@@ -117,6 +117,7 @@ export default function Router() {
 						<Route exact path="/rejected-requests" element={<RejectedRequests/>} />
 						<Route exact path="/accepted-topics" element={<AcceptedTopics/>} />
 						<Route exact path="/rejected-topics" element={<RejectedTopics/>} />
+						<Route exact path="/seesubmissions" element={<StdSubmissions/>} />
 
 					</Routes>
 					<Footer/>
