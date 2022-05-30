@@ -1,10 +1,11 @@
 import axios from 'axios';
+import {StartUrl} from "../configs/Url.json";
 
-let getAllsubmissionTypesURL = "http://localhost:5000/submissionType/getAllSubmissionTypes";
-let CreatesubmissionTypeURL = "http://localhost:5000/submissionType/createSubmissionType";
-let UpdatesubmissionTypeURL = "http://localhost:5000/submissionType/updateSubmissionType/";
-let DeletesubmissionTypeURL = "http://localhost:5000/submissionType/deleteSubmissionType/";
-let GetsubmissionTypeByIDURL = "http://localhost:5000/submissionType/getSubmissionTypeById/";
+let getAllsubmissionTypesURL = StartUrl + "submissionType/getAllSubmissionTypes";
+let CreatesubmissionTypeURL = StartUrl + "submissionType/createSubmissionType";
+let UpdatesubmissionTypeURL = StartUrl + "submissionType/updateSubmissionType/";
+let DeletesubmissionTypeURL = StartUrl + "submissionType/deleteSubmissionType/";
+let GetsubmissionTypeByIDURL = StartUrl + "submissionType/getSubmissionTypeById/";
 
 
 export async function getAllSubmissionTypes(){
