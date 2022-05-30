@@ -5,6 +5,7 @@ let CreateGroupURL = "http://localhost:5000/group/createGroup";
 let UpdateGroupURL = "http://localhost:5000/group/updateGroupById/";
 let DeleteGroupURL = "http://localhost:5000/group/deleteGroup/";
 let GetGroupByIDURL = "http://localhost:5000/group/getGroupById/";
+let GetgroupByNumberURL = "http://localhost:5000/group/getgroupByNumber/";
 
 
 export async function GetallGroups(){
@@ -14,6 +15,10 @@ export async function GetallGroups(){
 export async function getGroupByID(id){
     return axios.get(GetGroupByIDURL + id);
   }
+
+export async function getGroupByNo(data){
+  return axios.get(GetgroupByNumberURL + data);
+}
 
 export async function createNewGroup(data) {
   const alldata = {
