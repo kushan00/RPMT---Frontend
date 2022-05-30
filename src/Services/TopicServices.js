@@ -1,9 +1,10 @@
 import axios from 'axios';
+import {StartUrl} from "../configs/Url.json";
 
-let getAllTopicsURL = "http://localhost:5000/topic/getAlltopics";
-let createTopicURL = "http://localhost:5000/topic/createTopic";
-let getTopicByIDURL = "http://localhost:5000/topic/getTopicById/";
-let updateTopicByURL = "http://localhost:5000/topic/updateTopic/"
+let getAllTopicsURL = StartUrl + "topic/getAlltopics";
+let createTopicURL = StartUrl + "topic/createTopic";
+let getTopicByIDURL = StartUrl + "topic/getTopicById/";
+let updateTopicByURL = StartUrl + "topic/updateTopic/"
 
 export async function Getalltopics() {
   return axios.get(getAllTopicsURL);

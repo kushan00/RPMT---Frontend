@@ -1,13 +1,15 @@
 import axios from "axios";
+import {StartUrl} from "../configs/Url.json";
 
-let StoreSupervisorURL = "http://localhost:5000/supervisor/reqSupervisor";
-let StoreCoSupervisorURL = "http://localhost:5000/co-supervisor/reqCoSupervisor";
 
-let getSupervisorRequestsURL = "http://localhost:5000/supervisor/getReqBySupervisorId/";
-let getCoSupervisorRequestsURL = "http://localhost:5000/co-supervisor/getReqByCoSupervisorId/";
+let StoreSupervisorURL = StartUrl + "supervisor/reqSupervisor";
+let StoreCoSupervisorURL = StartUrl + "co-supervisor/reqCoSupervisor";
 
-let AcceptSuperviser = "http://localhost:5000/supervisor/AcceptTopic/";
-let AcceptCoSuperviser = "http://localhost:5000/co-supervisor/AcceptTopic/";
+let getSupervisorRequestsURL = StartUrl + "supervisor/getReqBySupervisorId/";
+let getCoSupervisorRequestsURL = StartUrl + "co-supervisor/getReqByCoSupervisorId/";
+
+let AcceptSuperviser = StartUrl + "supervisor/AcceptTopic/";
+let AcceptCoSuperviser = StartUrl + "co-supervisor/AcceptTopic/";
 
 
 
