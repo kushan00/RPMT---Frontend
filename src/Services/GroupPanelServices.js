@@ -1,10 +1,11 @@
 import axios from 'axios';
+import {StartUrl} from "../configs/Url.json";
 
-let getGroupPanelsURL = "http://localhost:5000/GrouPanel/getGroupPanels";
-let createGroupPanelURL = "http://localhost:5000/GrouPanel/createGroupPanel";
-let updateGroupPanelByIdURL = "http://localhost:5000/GrouPanel/updateGroupPanelById/";
-let deleteGroupPanelURL = "http://localhost:5000/GrouPanel/deleteGroupPanel/";
-let getGroupPanelByIdURL = "http://localhost:5000/GrouPanel/getGroupPanelById/";
+let getGroupPanelsURL = StartUrl + "GrouPanel/getGroupPanels";
+let createGroupPanelURL = StartUrl + "GrouPanel/createGroupPanel";
+let updateGroupPanelByIdURL = StartUrl + "GrouPanel/updateGroupPanelById/";
+let deleteGroupPanelURL = StartUrl + "GrouPanel/deleteGroupPanel/";
+let getGroupPanelByIdURL = StartUrl + "GrouPanel/getGroupPanelById/";
 
 
 export async function GetallGroupPanels(){
