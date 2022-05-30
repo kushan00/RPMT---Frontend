@@ -84,19 +84,19 @@ const RegisterTopic = () => {
 
         <Card className="" style={{ marginLeft: "30px", marginRight: "30px" }}>
           <CardHeader>
-            <CardTitle style={{ color: "purple", fontSize: "30px" }}>Research Topic Registration</CardTitle>
+            <CardTitle style={{ color: "black", fontSize: "30px" }}><b>Research Topic Registration</b></CardTitle>
           </CardHeader>
           <CardBody>
             <div style={{ width: "600px" }}>
               <Form>
                 {/* <Label>Enter Group Number as Follow (REG_(WD/WE)_GroupLeaderITnum)</Label> */}
-                <Input type="text" className="input" placeholder="Enter Group Number " value={GroupNo} onChange={(e) => handleGroupNo(e)} />
+                <Input type="text" className="input" placeholder="Enter Group Number " required value={GroupNo} onChange={(e) => handleGroupNo(e) } />
                 <br />
-                <Input type="text" className="input" placeholder="Enter Leader ITNumber " value={LeaderITNum} onChange={(e) => handleLeaderITNum(e)} />
+                <Input type="text" className="input" placeholder="Enter Leader IT Number " required value={LeaderITNum} onChange={(e) => handleLeaderITNum(e) } />
                 <br/>
-                <textarea type="text" className="form-control" cols="73" rows="2" placeholder="Enter The Topic" value={Topic} onChange={(e) => handleTopic(e)} />
+                <textarea type="text" className="form-control" cols="73" rows="2" required placeholder="Enter The Topic" value={Topic} onChange={(e) => handleTopic(e)} />
                 <br />
-                <textarea type="text" className="form-control" cols="73" rows="4" placeholder="Enter The Description" value={Description} onChange={(e) => handleDescription(e)} />
+                <textarea type="text" className="form-control" cols="73" rows="4" required placeholder="Enter The Description" value={Description} onChange={(e) => handleDescription(e)} />
                 <br />
                 
 

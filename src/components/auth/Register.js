@@ -54,7 +54,16 @@ const Register = () => {
 
 
 	return (
-		<div className="register-form">
+		<div className="card" style={{width: '800px',
+		border: '3px solid black',
+		marginRight: '50px',
+		marginLeft: '350px',
+		marginBottom:'50px',
+		marginTop:'50px',
+		backgroundColor:'#DCDCDC'
+		}}>
+			<center>
+				<br></br>
 			<h1 className="heading">Sign Up</h1>
 			<p className="lead">
 				<i className="fas fa-user"></i> Create Your Account
@@ -121,7 +130,9 @@ const Register = () => {
 			</form>
 			<p className="link">
 				Already have an account? <Link to="/login">Sign In</Link>
+				<br></br>
 			</p>
+			</center>
 		</div>
 	);
 };
