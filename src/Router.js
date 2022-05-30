@@ -22,6 +22,7 @@ import ViewAllRoles from "./components/admin/ViewAllRoles";
 import AdminViewSubmission from "./components/admin/AdminViewSubmission";
 import UpdateSubmission from "./components/admin/UpdateSubmission";
 import AllTemps from "./components/admin/AllTemps";
+import AssignPanel from "./components/admin/AssignPanel";
 
 // student
 import StudentTitleBar from "./components/student/StudentTitleBar";
@@ -47,6 +48,10 @@ import RejectedRequests from "./components/supervisor/RejectedRequests";
 import AcceptedTopics from "./components/supervisor/AcceptedTopics";
 import RejectedTopics from "./components/supervisor/RejectedTopics";
 import StdSubmissions from "./components/supervisor/StdSubmissions";
+import MainChat from "./components/ChatSystem/MainChat";
+import AssignedGroups from "./components/supervisor/AssignedGroups";
+import SelectedGroupDetails from "./components/supervisor/SelectedGroupDetails";
+
 
 // panel-member
 import PmTitleBar from "./components/panelMember/PmTitleBar";
@@ -57,6 +62,7 @@ import PmHome from "./components/panelMember/PmHome";
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
 import ViewSubmission from "./components/student/ViewSubmission";
+
 
 
 
@@ -87,7 +93,7 @@ export default function Router() {
 						<Route exact path="/adminViewsub" element={<AdminViewSubmission/>}/>
 						<Route exact path="/updateSub/:id" element={<UpdateSubmission/>}/>
 						<Route exact path="/alltemps" element={<AllTemps/>} />
-
+						<Route exacr path="/assign-panel" element={<AssignPanel/>}/>
 
 						{/* student */}
 						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />
@@ -118,6 +124,9 @@ export default function Router() {
 						<Route exact path="/accepted-topics" element={<AcceptedTopics/>} />
 						<Route exact path="/rejected-topics" element={<RejectedTopics/>} />
 						<Route exact path="/seesubmissions" element={<StdSubmissions/>} />
+						<Route excat path="/group-chat" element={<MainChat/>}/>
+						<Route exact path="/assigned-groups" element={<AssignedGroups/>}/>
+						<Route exact path="/group-selected/:id" element={<SelectedGroupDetails/>}/>
 
 					</Routes>
 					<Footer/>

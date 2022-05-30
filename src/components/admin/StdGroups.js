@@ -53,19 +53,19 @@ const StdGroups = () => {
               student3Mobileno:item?.grpstudent3?.mobileno,
             },
 
-            cosuperviser:{
-              cosuperviserName:item?.cosuperviserdetails?.name ? item?.cosuperviserdetails?.name : "Not Assigned yet",
-              cosuperviserITnum:item?.cosuperviserdetails?.ITnumber ? item?.cosuperviserdetails?.ITnumber : "Not Assigned yet",
-              cosuperviserEmail:item?.cosuperviserdetails?.email ? item?.cosuperviserdetails?.email : "Not Assigned yet",
-              cosuperviserMobileno:item?.cosuperviserdetails?.mobileno ? item?.cosuperviserdetails?.mobileno : "Not Assigned yet",
-            },
+            // cosuperviser:{
+            //   cosuperviserName:item?.cosuperviserdetails?.name ? item?.cosuperviserdetails?.name : "Not Assigned yet",
+            //   cosuperviserITnum:item?.cosuperviserdetails?.ITnumber ? item?.cosuperviserdetails?.ITnumber : "Not Assigned yet",
+            //   cosuperviserEmail:item?.cosuperviserdetails?.email ? item?.cosuperviserdetails?.email : "Not Assigned yet",
+            //   cosuperviserMobileno:item?.cosuperviserdetails?.mobileno ? item?.cosuperviserdetails?.mobileno : "Not Assigned yet",
+            // },
 
-            superviser:{
-              superviserName:item?.superviserdetails?.name  ? item?.superviserdetails?.name : "Not Assigned yet",
-              superviserITnum:item?.superviserdetails?.ITnumber  ?  item?.superviserdetails?.ITnumber : "Not Assigned yet",
-              superviserEmail:item?.superviserdetails?.email  ? item?.superviserdetails?.email  : "Not Assigned yet",
-              superviserMobileno:item?.superviserdetails?.mobileno  ? item?.superviserdetails?.mobileno : "Not Assigned yet",
-            },
+            // superviser:{
+            //   superviserName:item?.superviserdetails?.name  ? item?.superviserdetails?.name : "Not Assigned yet",
+            //   superviserITnum:item?.superviserdetails?.ITnumber  ?  item?.superviserdetails?.ITnumber : "Not Assigned yet",
+            //   superviserEmail:item?.superviserdetails?.email  ? item?.superviserdetails?.email  : "Not Assigned yet",
+            //   superviserMobileno:item?.superviserdetails?.mobileno  ? item?.superviserdetails?.mobileno : "Not Assigned yet",
+            // },
             createdAt: item.date,
           };
         });
@@ -83,17 +83,6 @@ const StdGroups = () => {
      useEffect(() => {
       getAllGroups();
      }, [])
-
-  let stageColor = {
-    pickup: "warning",
-    deliver: "success",
-    inwarehouse: "warning",
-    onroute: "warning",
-  };
-  let orderTypeColor = {
-    personal: "info",
-    business: "warning",
-  };
 
   const columns = [
     {
@@ -150,61 +139,30 @@ const StdGroups = () => {
         </div>
       ),
     },
-    {
-      name: (<Badge color="primary" style={{fontSize:"15px"}} >Superviser details</Badge>),
-      selector: "superviser",
-      cell: (data) => (
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <Label><Badge color="danger"> Name : </Badge>{data.superviser.superviserName}<br/></Label>
-          <Label><Badge color="danger"> IT Number : </Badge>{data.superviser.superviserITnum}<br/></Label>
-          <Label><Badge color="danger"> Email : </Badge>{data.superviser.superviserEmail}<br/></Label>
-          <Label><Badge color="danger"> Mobile Number :</Badge>{data.superviser.superviserMobileno}<br/></Label>
-        </div>
-      ),
-    },
-    {
-      name: (<Badge color="primary" style={{fontSize:"15px"}} >Co Superviser details</Badge>),
-      selector: "cosuperviser",
-      cell: (data) => (
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <Label><Badge color="danger"> Name : </Badge>{data.cosuperviser.cosuperviserName}<br/></Label>
-          <Label><Badge color="danger"> IT Number : </Badge>{data.cosuperviser.cosuperviserITnum}<br/></Label>
-          <Label><Badge color="danger"> Email : </Badge>{data.cosuperviser.cosuperviserEmail}<br/></Label>
-          <Label><Badge color="danger"> Mobile Number :</Badge>{data.cosuperviser.cosuperviserMobileno}<br/></Label>
-        </div>
-      ),
-    },
     // {
-    //   name: "Payment",
-    //   selector: "payment_status",
-
+    //   name: (<Badge color="primary" style={{fontSize:"15px"}} >Superviser details</Badge>),
+    //   selector: "superviser",
     //   cell: (data) => (
-    //     <div>
-    //       <div style={{ marginTop: "5px" }}></Badge>{data.total_amount}</div>
-
-    //       <Badge
-    //         style={{ marginTop: "5px" }}
-    //         color=</Badge>{data.payment_status === "Paid" ? "success" : "danger"}
-    //       >
-    //         </Badge>{data.payment_status}
-    //       </Badge>
-
-    //       <Badge
-    //         color={"info"}
-    //         style={{ marginTop: "5px", marginBottom: "5px" }}
-    //       >
-    //         </Badge>{data.payment_method}
-    //       </Badge>
+    //     <div style={{ display: "flex", flexDirection: "column" }}>
+    //       <Label><Badge color="danger"> Name : </Badge>{data.superviser.superviserName}<br/></Label>
+    //       <Label><Badge color="danger"> Email : </Badge>{data.superviser.superviserEmail}<br/></Label>
+    //       <Label><Badge color="danger"> Mobile Number :</Badge>{data.superviser.superviserMobileno}<br/></Label>
     //     </div>
     //   ),
-    //   ignoreRowClick: true,
-    //   allowOverflow: false,
-    //   wrap: true,
+    // },
+    // {
+    //   name: (<Badge color="primary" style={{fontSize:"15px"}} >Co Superviser details</Badge>),
+    //   selector: "cosuperviser",
+    //   cell: (data) => (
+    //     <div style={{ display: "flex", flexDirection: "column" }}>
+    //       <Label><Badge color="danger"> Name : </Badge>{data.cosuperviser.cosuperviserName}<br/></Label>
+    //       <Label><Badge color="danger"> Email : </Badge>{data.cosuperviser.cosuperviserEmail}<br/></Label>
+    //       <Label><Badge color="danger"> Mobile Number :</Badge>{data.cosuperviser.cosuperviserMobileno}<br/></Label>
+    //     </div>
+    //   ),
     // },
     {
       name: (<Badge color="primary" style={{fontSize:"15px"}} >Created At</Badge>),
-      //selector: "createdAt",
-      //selector: row => `${ moment(row.createdAt).format(" MM-DD-YYYY ") }  ${ moment(row.createdAt).format(" h:mm a ") }`,
       cell: ({ createdAt }) => (
         <div>
           <Badge color="success">{moment(createdAt).format(" YYYY-MM-DD ")}</Badge>
@@ -234,28 +192,7 @@ const StdGroups = () => {
         style={{backgroundColor:"purple"}}
         data={groupDetails}
         columns={columns}
-        // noHeader
-        // pagination
-        // paginationServer={paginationServer}
-        // paginationComponentOptions={{
-        //     rowsPerPageText: "Record Per Page:",
-        //     rangeSeparatorText: "of",
-        //     selectAllRowsItemText: "All",
-        // }}
-        // onChangeRowsPerPage={handelRowChange}
-        // highlightOnHover
-        // paginationPerPage={20}
-        // paginationTotalRows={totalCount}
-        // paginationDefaultPage={1}
-        // onChangePage={handelPageChange}
-        // paginationRowsPerPageOptions={[20, 50, 70]}
-        // // expandableRows
-        // // expandOnRowClicked
         progressPending={loading}
-        // progressComponent={<CustomLoader />}
-        // expandableRowsComponent={
-        //   <ExpandableTable title={title} locationTitle={locationTitle} />
-        // }
       />
       </CardBody>
     </Card>
