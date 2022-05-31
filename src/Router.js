@@ -23,6 +23,7 @@ import AdminViewSubmission from "./components/admin/AdminViewSubmission";
 import UpdateSubmission from "./components/admin/UpdateSubmission";
 import AllTemps from "./components/admin/AllTemps";
 import AssignPanel from "./components/admin/AssignPanel";
+import UpdateUser from "./components/admin/UpdateUser";
 
 // student
 import StudentTitleBar from "./components/student/StudentTitleBar";
@@ -68,6 +69,7 @@ import ViewSubmission from "./components/student/ViewSubmission";
 
 
 
+
 //testing 
 let isauth = localStorage.getItem('user');
 
@@ -95,7 +97,8 @@ export default function Router() {
 						<Route exact path="/adminViewsub" element={<AdminViewSubmission/>}/>
 						<Route exact path="/updateSub/:id" element={<UpdateSubmission/>}/>
 						<Route exact path="/alltemps" element={<AllTemps/>} />
-						<Route exacr path="/assign-panel" element={<AssignPanel/>}/>
+						<Route exact path="/assign-panel" element={<AssignPanel/>}/>
+						<Route exact path="/updateUser/:id" element={<UpdateUser/>}/>
 
 						{/* student */}
 						<Route exact path="/studentTitleBar" element={<StudentTitleBar/>} />

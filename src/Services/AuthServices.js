@@ -9,6 +9,7 @@ let getAllUsers = StartUrl + "user/getAllUsers";
 let CreateUser = StartUrl + "user/createUser";
 let UpdateUser = StartUrl + "user/updateUserById/";
 let DeleteUser = StartUrl + "user/deleteUser/";
+let GetUserByIDUrl = StartUrl + "user/getUserById/";
 
 let getByITNum = StartUrl + "user/getUserByITNum/";
 
@@ -79,6 +80,9 @@ export async function DeleteAdmin(id) {
   return await axios.delete(DeleteUser + id);
 }
 
+export async function GetUserByID(id) {
+  return await axios.get(GetUserByIDUrl + id);
+}
 
 
 export async function GetByIT(data) {
