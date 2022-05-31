@@ -32,7 +32,7 @@ const StdSubmissions = () => {
                         <tr>
                             <th>#</th>
                             <th>Group Number</th>
-                            <th>Leader's IUT Number</th>
+                            <th>Leader's IT Number</th>
                             <th>Topic</th>
                             <th>Submission File</th>
                             <th>Comments</th>
@@ -45,8 +45,9 @@ const StdSubmissions = () => {
                                 <td>{submission.groupNo}</td>
                                 <td>{submission.itNo}</td>
                                 <td>{submission.topic}</td>
-                                <td><a className='btn btn-outline-danger' href={submission.file}>click here to get the file</a></td>
-                                <td>{submission.comment}</td>
+                                <td><a className='btn btn-danger btn-sm' href={submission.file}>Document</a></td>
+                                <td>{submission.comment == null ? "Marks not allocated " : submission.comment}</td>
+                                <td><a className='btn btn-primary' href={`/allocatemarks/${submission?._id}`}>Allocate Marks</a></td>
                             </tr>
                         ))}
                     </tbody>
