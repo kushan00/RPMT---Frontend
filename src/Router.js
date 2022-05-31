@@ -58,10 +58,12 @@ import PmTitleBar from "./components/panelMember/PmTitleBar";
 import EvaluatePres from "./components/panelMember/EvaluatePres";
 import EvaluateTopics from "./components/panelMember/EvaluateTopics";
 import PmHome from "./components/panelMember/PmHome";
+import AssignedGroupsPM from "./components/panelMember/AssignedGroupsPM";
 
 //staff
 import RegisterStaff from "./components/auth/RegisterStaff";
 import ViewSubmission from "./components/student/ViewSubmission";
+
 
 
 
@@ -112,6 +114,7 @@ export default function Router() {
 						<Route exact path="/evapresentation" element={<EvaluatePres/>} />
 						<Route exact path="/evaluate-topics" element={<AcceptTopics/>} />
 						<Route exact path="/pmhome" element={<PmHome/>} />
+						<Route exact path="/pm-assign-groups" element={<AssignedGroupsPM/>}/>
 
 						{/* supervisor and co-supervisor*/}
 						<Route exact path="/actopics" element={<AcceptTopics/>} />

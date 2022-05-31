@@ -102,8 +102,8 @@ const AcceptedTopics = () => {
         <Card>
           <CardHeader>
             <CardTitle style={{ color: "black", fontSize: "30px" }}><b>Accepted Topic Details</b></CardTitle>
-            <Button className="btn btn-success" style={{ fontSize: "13px", marginLeft: "25%" }} href="/actopics"><b>New Topics</b></Button>
-            <Button className="btn btn-danger" style={{ fontSize: "13px", marginLeft: "25%" }} href="/rejected-topics"><b>Rejected Topics</b></Button>
+            <Button className="btn btn-info" style={{ fontSize: "13px", marginLeft: "40%" }} href="/actopics"><b>View Registered Topics</b></Button>
+            
             <br></br>
             <br></br>
           </CardHeader>

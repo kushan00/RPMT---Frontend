@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { getSubmissions } from '../../Services/SubmissionService';
 
 const StdSubmissions = () => {
 
@@ -8,7 +9,7 @@ const StdSubmissions = () => {
 
     const getAllSubs = async () => {
         try {
-            const { data } = await axios.get("http://localhost:5000/submission/allsubmissions")
+            const { data } = await getSubmissions();
             setSubs(data.data)
             console.log(data.data);
 

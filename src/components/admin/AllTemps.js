@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { getAllTemps } from '../../Services/tmpUploadService';
 
 const AllTemps = () => {
 
@@ -8,7 +9,7 @@ const AllTemps = () => {
 
     const getAllSongs = async () => {
         try {
-            const { data } = await axios.get("http://localhost:5000/fileupload/allfiles")
+            const { data } = await getAllTemps();
             setSongs(data.data)
             console.log(data.data);
 

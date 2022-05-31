@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { getAllMarkingSchemes } from '../../Services/MarkingSchemeService';
 
 const MarkingSchemes = () => {
 
@@ -8,7 +9,7 @@ const MarkingSchemes = () => {
 
   const getAllMarkings = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/marking/allmarkings")
+      const { data } = await getAllMarkingSchemes();
       setMarkings(data.data)
       console.log(data.data);
 

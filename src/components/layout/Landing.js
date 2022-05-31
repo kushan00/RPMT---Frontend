@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import "./dashboard.css";
+import "./script.js";
 
+//<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 const Landing = () => {
 
@@ -8,7 +11,11 @@ const Landing = () => {
 		<section className="landing">
 			<div className="dark-overlay">
 				<div className="landing-inner">
-					<h1>Research Project Managment Tool</h1>
+
+					<div className = "home" >
+					<b>Research Project Management Tool</b>
+					</div>
+					
 					<br />
 					<div className="buttons">
 						<Link to="/register" className="btn btn-success">

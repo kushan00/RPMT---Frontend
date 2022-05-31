@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import FileInput from "./MarkingInput";
 import { validateMarkingUp } from './Validation';
+import { uploadMarking } from '../../Services/MarkingSchemeService';
 
 const MarkingUpload = () => {
 
@@ -33,8 +34,8 @@ const MarkingUpload = () => {
 
     else {
       try {
-        const url = "http://localhost:5000/marking/uploadmarking"
-        const { data: res } = await axios.post(url, data);
+        //const url = "http://localhost:5000/marking/uploadmarking"
+        const { data: res } = await uploadMarking(data);
         console.log(res)
 
         if (res?.status == 201) {
@@ -92,9 +93,6 @@ const MarkingUpload = () => {
             </button>
           </center>
         </form>
-        <div>
-          <a className='btn btn-secondary' href='/markingsche'>All Markings</a>&nbsp;
-        </div>
       </div>
     </div>
   )
