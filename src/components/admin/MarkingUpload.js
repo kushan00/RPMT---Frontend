@@ -92,9 +92,6 @@ const MarkingUpload = () => {
             </button>
           </center>
         </form>
-        <div>
-          <a className='btn btn-secondary' href='/markingsche'>All Markings</a>&nbsp;
-        </div>
       </div>
     </div>
   )

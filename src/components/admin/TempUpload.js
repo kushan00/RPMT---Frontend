@@ -5,6 +5,7 @@ import FileInput from "./FileInput";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import { validateMarkingUp } from './Validation';
+import { UploadTmpFile } from '../../Services/tmpUploadService';
 
 const TempUpload = () => {
 
@@ -36,8 +37,7 @@ const TempUpload = () => {
 
     else {
       try {
-        const url = "http://localhost:5000/fileupload/uploadfile"
-        const { data: res } = await axios.post(url, data);
+        const { data: res } = await UploadTmpFile(data);
         console.log(res)
 
         if (res?.status == 201) {
@@ -108,10 +108,6 @@ const TempUpload = () => {
           Upload Document
         </button></center>
       </form>
-      <div>
-        <a className='btn btn-secondary' href='/alltemps'>All Documents</a>&nbsp;
-        <a className='btn btn-info' href='/downtmp'>Download Documents std View</a>
-      </div>
     </div>
   )
 }
