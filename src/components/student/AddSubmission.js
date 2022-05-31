@@ -6,6 +6,7 @@ import FileInput from "./SubmissionInput";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import {getSubmissionTypeByID} from "../../Services/SubmissionTypeService"
+import { uploadSub } from '../../Services/SubmissionService';
 
 const AddSubmission = () => {
 
@@ -41,8 +42,7 @@ const AddSubmission = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const url = "http://localhost:5000/submission/upsubmissions"
-      const { data: res } = await axios.post(url, data);
+      const { data: res } = await uploadSub(data);
       console.log(res)
 
       if (res?.status == 201) {
