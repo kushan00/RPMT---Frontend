@@ -6,6 +6,7 @@ let createGroupPanelURL = StartUrl + "GrouPanel/createGroupPanel";
 let updateGroupPanelByIdURL = StartUrl + "GrouPanel/updateGroupPanelById/";
 let deleteGroupPanelURL = StartUrl + "GrouPanel/deleteGroupPanel/";
 let getGroupPanelByIdURL = StartUrl + "GrouPanel/getGroupPanelById/";
+let getGroupPanelByUserIdURL = StartUrl + "GrouPanel/getGroupByUserID/";
 
 
 export async function GetallGroupPanels(){
@@ -15,6 +16,11 @@ export async function GetallGroupPanels(){
 export async function getGroupPanelByID(id){
     return axios.get(getGroupPanelByIdURL + id);
   }
+
+
+export async function getGroupPanelByUserID(id){
+  return axios.get(getGroupPanelByUserIdURL + id);
+}
 
 export async function createNewGroupPanel(data) {
   return await axios.post(createGroupPanelURL,data);
