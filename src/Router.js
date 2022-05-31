@@ -35,7 +35,7 @@ import StdHome from "./components/student/StdHome"
 import RegisterTopic from "./components/student/RegisterTopic"
 import ReqCoSup from "./components/student/ReqCoSup";
 import ViewSubmission from "./components/student/ViewSubmission";
-
+import MarksPage from "./components/student/MarksPage";
 
 // supervisor and co-supervisor
 import AcceptTopics from "./components/supervisor/AcceptTopics";
@@ -51,7 +51,7 @@ import StdSubmissions from "./components/supervisor/StdSubmissions";
 import MainChat from "./components/ChatSystem/MainChat";
 import AssignedGroups from "./components/supervisor/AssignedGroups";
 import SelectedGroupDetails from "./components/supervisor/SelectedGroupDetails";
-
+import AllocateMarks from "./components/supervisor/AllocateMarks";
 
 // panel-member
 import PmTitleBar from "./components/panelMember/PmTitleBar";
@@ -108,6 +108,7 @@ export default function Router() {
 						<Route exact path="/stdhome" element={<StdHome/>} />
 						<Route exact path="/topicreg" element={<RegisterTopic/>} />
 						<Route exact path="/viewsub" element={<ViewSubmission/>} />
+						<Route exact path="/markspage" element={<MarksPage/>} />
 						
 						{/* panelMember */}
 						<Route exact path="/pmTitleBar" element={<PmTitleBar/>} />
@@ -130,6 +131,7 @@ export default function Router() {
 						<Route excat path="/group-chat" element={<MainChat/>}/>
 						<Route exact path="/assigned-groups" element={<AssignedGroups/>}/>
 						<Route exact path="/group-selected/:id" element={<SelectedGroupDetails/>}/>
+						<Route exact path="/allocatemarks/:id" element={<AllocateMarks/>} />
 
 					</Routes>
 					<Footer/>

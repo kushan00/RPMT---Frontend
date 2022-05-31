@@ -11,6 +11,7 @@ import img02 from '../img/admin.jpg'
 //import './layout/script.js';
 
 
+
 const Dashboard = () => {
 
 	return (
@@ -19,19 +20,14 @@ const Dashboard = () => {
 				<table>
 					<tr>
 						<td>
-							<img src={img02} style={{ width: 600, marginTop: '300px', marginBottom: '300px', marginLeft: '10px', marginRight: '10px' }}></img>
+							<center><h2 style={{marginTop: '200px',marginBottom: '20px',color:"purple"}}>Welcome to the system {localStorage.getItem("user")}</h2></center>
+							<center><h2 style={{marginTop: '20px',marginBottom: '20px',color:"red"}}>Your Role is : {localStorage.getItem("userRole")}</h2></center>
 						</td>
-						{/* <td>
-					<h1 class="ml2">Research Project Management Tool</h1>
-					</td> */}
-
-						{/* <td>
-					<img src={img02} style={{ width: 600, marginTop: '300px',marginBottom:'300px', marginLeft: '10px', marginRight: '10px' }}></img>
-					</td>
-
-					<td>
-					<img src={img03} style={{ width: 600, marginTop: '300px',marginBottom:'300px', marginLeft: '10px', marginRight: '10px' }}></img>
-					</td> */}
+					</tr>
+					<tr>
+						<td>
+							<img src={img02} style={{ width: 600,  marginBottom: '300px', marginLeft: '10px', marginRight: '10px' }}></img>
+						</td>
 					</tr>
 				</table>
 			</center>

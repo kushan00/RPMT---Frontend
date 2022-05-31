@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useState } from "react";
-import axios from 'axios';
 import FileInput from "./SubmissionInput";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
@@ -18,7 +17,7 @@ const AddSubmission = () => {
     itNo: "",
     file: "",
     topic: "",
-    comment: "",
+    //comment: "",
   });
 
   const getType = async () => {
@@ -52,7 +51,7 @@ const AddSubmission = () => {
           title: 'Congrats!',
           text: 'Document Upload successfull...!',
         })
-        //navigate("/alltemps")
+        navigate("/dashboard")
       }
       else {
         Swal.fire({
@@ -109,16 +108,17 @@ const AddSubmission = () => {
             handleInputState={handleInputState}
             type="file"
             value={data.file}
+            required
           />
 
-          <label style={{ marginTop: '15px' }}>Comments <span style={{ color: 'red' }}>(optional)</span></label>
+          {/* <label style={{ marginTop: '15px' }}>Comments <span style={{ color: 'red' }}>(optional)</span></label>
           <textarea
             className='form-control'
             //placeholder="Description"
             name="comment"
             onChange={handleChange}
             value={data.comment}
-          />
+          /> */}
 
           <center>
             <button style={{ marginTop: '15px', marginBottom: '15px' }} type="submit" className="btn btn-success" >

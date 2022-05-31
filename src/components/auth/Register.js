@@ -65,14 +65,7 @@ const Register = () => {
 
 
 	return (
-		<div className="card" style={{width: '800px',
-		border: '3px solid black',
-		marginRight: '50px',
-		marginLeft: '350px',
-		marginBottom:'50px',
-		marginTop:'50px',
-		backgroundColor:'#DCDCDC'
-		}}>
+		<div>
 			<center>
 				<br></br>
 			<h1 className="heading">Sign Up</h1>
